@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    margin: 5px 0 ; 
+}
+
+.container{
+    width: 600px;
+    margin: 0 auto;
+}
+fieldset{
+    margin-bottom: 15px;
+    padding: 25px;
+}
+
+.field-row{
+    text-align: center;   
+}
+.form-row{
+    margin-bottom: 10px; 
+}
+
+.form-row label{
+    display: inline-block;
+    width: 200px;   
+}
+
+.form-row .radio{
+ width: 100px;
+ margin-bottom: 10px; 
+}
+
+textarea{
+    width: 200px;
+    height: 100px;
+}
+
+.study-goal{
+margin-bottom: 10px;
+}
+
+.buttons{
+    text-align: center;
+}

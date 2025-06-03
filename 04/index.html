@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/style/style.css">
+	<title>Lesson 6 - Forms</title>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Заповніть данні</h1>
+		<form  method="post" enctype="multipart/form-data" id="my_form" 
+		onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+			<fieldset>
+				<legend>Основна інформація (обов'язково до заповнення)</legend>
+				<div class="form-row">
+					<label>Ваше ім'я</label>
+					<input type="text" name="User name" placeholder="Прізвище та Ім'я" required>
+				</div>
+				<div class="form-row">
+					<label>Email</label>
+					<input type="email" name="email" placeholder="example@yourmail.com" required>
+				</div>				
+				<div class="form-row">
+					<label>Пароль</label>
+					<input type="password" name="pass" placeholder="Введіть пароль" required>
+				</div>
+				<div class="form-row">
+					<label>Пароль ще раз</label>
+					<input type="password" name="pass2" placeholder="Повторіть пароль" required>
+				</div>				
+				<div class="form-row">
+					<label>Стать</label>
+					<label class="radio">
+						<input type="radio" name="gender" value="male" required>
+						Чоловік
+					</label>
+					<label class="radio">
+						<input type="radio" name="gender" value="female">
+						Жінка
+					</label>
+				</div>	
+				<div class="form-row">
+						<label>Вік</label>
+						<input type="number" name="age" placeholder="Ваш вік" required>	
+				</div>
+				<div class="form-row">
+					<label>Kурс</label>
+					<select name="cours" id="cours" required>
+						<option value="" disabled selected>- Оберіть курс -</option>
+						<option value="fe">Front-End</option>
+						<option value="be">Back-End</option>
+						<option value="do">DevOps</option>
+						<option value="uxui">UX/UI</option>
+						<option value="pm">Progect Manager</option>
+					</select>
+				</div>
+				<div class="form-row">
+					<label>Повна адреса</label>
+					<textarea name="adress" id="adress" placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
+				</div>	
+			</fieldset>
+			<fieldset>
+				<legend>Додаткова інформація (необов'язково до заповнення)</legend>
+				<div class="form-row">
+					<label>Додайте фото</label>
+					<input type="file" id="photo" name="photo" accept=".jpg, .png, .pdf">
+				</div>
+				<div class="form-row">
+					<label>Ваш LinkedIn</label>	
+					<input type="url" name="link" placeholder="https://www.linkedin.com/...">
+				</div>
+				<div class="form-row">
+					<label>Оберіть улюблений колір</label>	
+					<input type="color" name="color" value="#1933F5">
+				</div>
+				<div class="form-row">
+					<label>Дата народження</label>
+					<input type="date" name="date">
+				</div>
+				<div class="form-row">
+					<label>Бажання навчатись</label>
+					<input type="range" name="range" >
+				</div>
+				<div class="form-row">
+					<label class="study-goal">Найважливіше в навчанні для мене:</label>
+					<div>
+						<label ><input type="checkbox" name="studygoal[]" value="team">Робота в команді</label>
+						<label ><input type="checkbox" name="studygoal[]" value="mentor">Робота з ментором </label>
+						<label ><input type="checkbox" name="studygoal[]" value="portfolio">Портфоліо</label>
+						<label ><input type="checkbox" name="studygoal[]" value="prac">Багато практики</label>
+						<label ><input type="checkbox" name="studygoal[]" value="schedule">Зручний графі</label>
+						<label ><input type="checkbox" name="studygoal[]" value="certificate">Сертифікат</label>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-row">
+				<input type="checkbox" required>Я погоджуюсь на обробку персональних даних.
+			</div>	
+			<div class="buttons">
+				<button type="reset">Очистити всі дані</button>
+				<button type="submit">Надіслати</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
