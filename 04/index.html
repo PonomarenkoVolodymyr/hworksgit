@@ -16,72 +16,72 @@
 				<legend>Основна інформація (обов'язково до заповнення)</legend>
 				<div class="form-row">
 					<label>Ваше ім'я</label>
-					<input type="text" name="User name" placeholder="Прізвище та Ім'я" required>
+					<input type="text" name="user-name" placeholder="Прізвище та Ім'я" required>
 				</div>
 				<div class="form-row">
-					<label>Email</label>
-					<input type="email" name="email" placeholder="example@yourmail.com" required>
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" placeholder="example@yourmail.com" required>
 				</div>				
 				<div class="form-row">
-					<label>Пароль</label>
-					<input type="password" name="pass" placeholder="Введіть пароль" required>
+					<label for="pass">Пароль</label>
+					<input type="password" name="pass" id="pass" placeholder="Введіть пароль" required>
 				</div>
 				<div class="form-row">
-					<label>Пароль ще раз</label>
-					<input type="password" name="pass2" placeholder="Повторіть пароль" required>
+					<label for="pass2">Пароль ще раз</label>
+					<input type="password" name="pass2" id="pass2" placeholder="Повторіть пароль" required>
 				</div>				
 				<div class="form-row">
-					<label>Стать</label>
-					<label class="radio">
-						<input type="radio" name="gender" value="male" required>
+					<label >Стать</label>
+					<label for="male" class="radio">
+						<input type="radio" name="gender" id="male" value="male" required>
 						Чоловік
 					</label>
-					<label class="radio">
-						<input type="radio" name="gender" value="female">
+					<label for="female" class="radio">
+						<input type="radio" name="gender" id="female" value="female">
 						Жінка
 					</label>
 				</div>	
 				<div class="form-row">
-						<label>Вік</label>
-						<input type="number" name="age" placeholder="Ваш вік" required>	
+						<label for="age">Вік</label>
+						<input type="number" name="age" id="age" placeholder="Ваш вік" required>	
 				</div>
 				<div class="form-row">
-					<label>Kурс</label>
+					<label for="cours">Курс</label>
 					<select name="cours" id="cours" required>
 						<option value="" disabled selected>- Оберіть курс -</option>
 						<option value="fe">Front-End</option>
 						<option value="be">Back-End</option>
 						<option value="do">DevOps</option>
 						<option value="uxui">UX/UI</option>
-						<option value="pm">Progect Manager</option>
+						<option value="pm">Project Manager</option>
 					</select>
 				</div>
 				<div class="form-row">
-					<label>Повна адреса</label>
+					<label for="adress">Повна адреса</label>
 					<textarea name="adress" id="adress" placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
 				</div>	
 			</fieldset>
 			<fieldset>
 				<legend>Додаткова інформація (необов'язково до заповнення)</legend>
 				<div class="form-row">
-					<label>Додайте фото</label>
+					<label for="photo">Додайте фото</label>
 					<input type="file" id="photo" name="photo" accept=".jpg, .png, .pdf">
 				</div>
 				<div class="form-row">
-					<label>Ваш LinkedIn</label>	
-					<input type="url" name="link" placeholder="https://www.linkedin.com/...">
+					<label for="link">Ваш LinkedIn</label>	
+					<input type="url" name="link" id="link" placeholder="https://www.linkedin.com/...">
 				</div>
 				<div class="form-row">
-					<label>Оберіть улюблений колір</label>	
-					<input type="color" name="color" value="#1933F5">
+					<label for="color">Оберіть улюблений колір</label>	
+					<input type="color" id="color" name="color" value="#1933F5">
 				</div>
 				<div class="form-row">
-					<label>Дата народження</label>
-					<input type="date" name="date">
+					<label for="birth-date">Дата народження</label>
+					<input type="date" id="birth-date" name="date">
 				</div>
 				<div class="form-row">
-					<label>Бажання навчатись</label>
-					<input type="range" name="range" >
+					<label for="range">Бажання навчатись</label>
+					<input type="range" name="range" id="range" >
 				</div>
 				<div class="form-row">
 					<label class="study-goal">Найважливіше в навчанні для мене:</label>
