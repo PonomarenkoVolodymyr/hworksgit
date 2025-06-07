@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -13,10 +14,15 @@ font-size: 3rem;
 font-weight: 700;
 text-align: left;
 margin-bottom: 50px;
+
  }
  h2{
    font-size: 2.125rem;
    font-weight: 700;   
+ }
+
+ img {
+   vertical-align: top;
  }
 
 a{
@@ -40,7 +46,7 @@ nav ul {
  }
 
 .conteiner{
-    width: 970px;
+    width: min(90%, 970px);
     margin: 0 auto;
     text-align: center;
     padding-top: 100px;
@@ -61,10 +67,10 @@ nav ul {
     margin-bottom: 12px;
 }
 
- .main-photo{
+ /* .main-photo{
    display: block;
    width: 100%;  
-}
+} */
 
 .about-me{
    margin-bottom: 50px;
