@@ -11,77 +11,78 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About me</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>           
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>    
         <main class="main">
-            <section>
-                <div class="conteiner novik">
-                    <div class="line"></div>
+            <section class="first-section">
+                <div class="container">
                     <h1>Denis Novik</h1>
                     <img class="main-photo" src="assets/images/main-photo.jpg" alt="main photo" title="main photo">
                 </div>
             </section>
-            <section>
-                <div class="conteiner grey">
+            <section id="about" class="bg-grey">
+                <div class="container">
                     <h2 class="about-me">About me</h2>
                     <div class="content">
-                        <p>Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it.</p>
+                        <p>Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything connected with it.</p>
                         <p>I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
                         <p>Ready to implement excellent projects with wonderful people.</p>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="conteiner">
+            <section id="skills">
+                <div class="container">
                     <hgroup>
                         <h2>Skills</h2>
                         <p>I work in such programs as</p>
                     </hgroup>
                     <ul class="skill-list">
                         <li class="skill-item">
-                            <div><img src="assets/images/skills/Ps.svg" alt="Photoshop logo" title="Photoshop logo"></div>
-                            <div><span>Adobe Photoshop</span></div>
+                            <img src="assets/images/skills/Ps.svg" alt="Photoshop logo" title="Photoshop logo">
+                            <div class="skill-title">Adobe Photoshop</div>
                             <div>   
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
+                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
+                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
                         </div>
                         </li>
                         <li class="skill-item">
-                            <div><img src="assets/images/skills/Ai.svg" alt="Illustrator logo" title="Illustrator logo"></div>
-                            <div><span>Adobe Illustrator</span></div>                                                      
+                            <img src="assets/images/skills/Ai.svg" alt="Illustrator logo" title="Illustrator logo">
+                            <div class="skill-title">Adobe Illustrator</div>                                                      
                             <div>
                                 <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                                 <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                                 <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
                             </div>
                         </li>
                         <li class="skill-item">
-                            <div><img src="assets/images/skills/Ae.svg" alt="After Effects logo" title="After Effects logo"></div>
-                            <div><span>Adobe After Effects</span></div>
+                            <img src="assets/images/skills/Ae.svg" alt="After Effects logo" title="After Effects logo">
+                            <div class="skill-title">Adobe<br>After Effects</div>
                             <div>
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon" class="grey-star">
                             </div>
                         </li>
                         <li class="skill-item">
-                            <div><img src="assets/images/skills/Figma.svg" alt="Figma logo" title="Figma logo"></div>
-                            <div><span>Figma</span></div>
+                            <img src="assets/images/skills/Figma.svg" alt="Figma logo" title="Figma logo">
+                            <div class="skill-title">Figma</div>
                             <div>                                
                                 <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                                 <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
@@ -93,35 +94,37 @@
                     </ul>
                 </div>
             </section>
-            <section>
-                <div class="conteiner">
-                    <h2>Portfolio</h2>
-                    <img src="assets/images/portfolio/fashion-store.jpg" alt="fashion-store" title="fashion-store">
-                    <a href="#">Online fashion store - Homepage</a>
-                </div>
-                <div class="conteiner">                    
-                    <img src="assets/images/portfolio/reebok-web.jpg" alt="reebok-web" title="reebok-web">
-                    <a href="#">Reebok Store - Concept</a>
-                </div>
-                <div class="conteiner">                    
-                    <img src="assets/images/portfolio/braun-landing.jpg" alt="braun-landing" title="braun-landing">
-                    <a href="#">Braun Landing Page - Concept</a>
+            <section id="portfolio" class="bg-grey">
+                <div class="container">
+                    <div class="portfolio-item">
+                        <h2 >Portfolio</h2>
+                        <img src="assets/images/portfolio/fashion-store.jpg" alt="fashion-store" title="fashion-store">
+                        <a href="#">Online fashion store - Homepage</a>
+                    </div>                
+                    <div class="portfolio-item">                    
+                        <img src="assets/images/portfolio/reebok-web.jpg" alt="reebok-web" title="reebok-web">
+                        <a href="#">Reebok Store - Concept</a>
+                    </div>
+                    <div class="portfolio-item">                    
+                        <img src="assets/images/portfolio/braun-landing.jpg" alt="braun-landing" title="braun-landing">
+                        <a href="#">Braun Landing Page - Concept</a>
+                    </div>
                 </div>
             </section>
-            <section>
+            <section id="contacts">
                 <div class="container">
-                    <hgroup>
+                    <hgroup class="contacts">
                         <h2>Contacts</h2>
                         <p class="content">Want to know more or just chat? You are welcome!</p>                        
                     </hgroup>
-                    <a href="#">Send message</a>
-                    <ul>
+                    <a class="btn" href="#">Send message</a>
+                    <ul class="contacts-list">
                         <li><a href="#"><img src="assets/images/contacts/linkedin.svg" alt="linkedin logo" title="linkedin logo"></a></li>
                         <li><a href="#"><img src="assets/images/contacts/instagram.svg" alt="instagram logo" title="instagram logo"></a></li>
                         <li><a href="#"><img src="assets/images/contacts/behance.svg" alt="behance logo" title="behance logo"></a></li>
                         <li><a href="#"><img src="assets/images/contacts/dribbble.svg" alt="dribbble logo" title="dribbble logo"></a></li>
                     </ul>
-                    <p>Like me on LinkedIn, Instagram, Behance, Dribble</p>
+                    <p class="contacts-message">Like me on<br>LinkedIn, Instagram, Behance, Dribble</p>
                 </div>
             </section>
         </main>    
