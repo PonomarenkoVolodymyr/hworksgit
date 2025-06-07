@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/styles.css">
     <title>03 Figma</title>
 </head>
 <body>
@@ -17,16 +21,17 @@
             </ul>
         </nav>
     </header>    
-        <main>
+        <main class="main">
             <section>
-                <div class="conteiner">
+                <div class="conteiner novik">
+                    <div class="line"></div>
                     <h1>Denis Novik</h1>
-                    <img src="assets/images/main-photo.jpg" alt="main photo" title="main photo">
+                    <img class="main-photo" src="assets/images/main-photo.jpg" alt="main photo" title="main photo">
                 </div>
             </section>
             <section>
-                <div class="conteiner">
-                    <h2>About me</h2>
+                <div class="conteiner grey">
+                    <h2 class="about-me">About me</h2>
                     <div class="content">
                         <p>Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything connected with it.</p>
                         <p>I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
@@ -40,42 +45,50 @@
                         <h2>Skills</h2>
                         <p>I work in such programs as</p>
                     </hgroup>
-                    <ul>
-                        <li>
-                            <img src="assets/images/skills/Ps.svg" alt="Photoshop logo" title="Photoshop logo">
-                            <span>Adobe Photoshop</span>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <div><img src="assets/images/skills/Ps.svg" alt="Photoshop logo" title="Photoshop logo"></div>
+                            <div><span>Adobe Photoshop</span></div>
+                            <div>   
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                        </div>
                         </li>
-                        <li>
-                            <img src="assets/images/skills/Ai.svg" alt="Illustrator logo" title="Illustrator logo">
-                            <span>Adobe Illustrator</span>
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                        <li class="skill-item">
+                            <div><img src="assets/images/skills/Ai.svg" alt="Illustrator logo" title="Illustrator logo"></div>
+                            <div><span>Adobe Illustrator</span></div>                                                      
+                            <div>
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                            </div>
                         </li>
-                        <li>
-                            <img src="assets/images/skills/Ae.svg" alt="After Effects logo" title="After Effects logo">
-                            <span>Adobe After Effects</span>
+                        <li class="skill-item">
+                            <div><img src="assets/images/skills/Ae.svg" alt="After Effects logo" title="After Effects logo"></div>
+                            <div><span>Adobe After Effects</span></div>
+                            <div>
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
                             <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                            </div>
                         </li>
-                        <li>
-                            <img src="assets/images/skills/Figma.svg" alt="Figma logo" title="Figma logo">
-                            <span>Figma</span>
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
-                            <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                        <li class="skill-item">
+                            <div><img src="assets/images/skills/Figma.svg" alt="Figma logo" title="Figma logo">
+                            <div><span>Figma</span></div>
+                            <div>                                
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                                <img src="assets/images/skills/star-icon.svg" alt="star-icon" title="star-icon">
+                            </div>
                         </li>
                     </ul>
                 </div>
