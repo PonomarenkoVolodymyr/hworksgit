@@ -99,7 +99,7 @@ section {
 }
 
 .content p {
-   margin-bottom: 30px;
+   margin-bottom: 31px;
 }
 
 .content p:last-child{
@@ -111,7 +111,7 @@ section {
 }
 
 hgroup{
-   margin-bottom: 50px;
+   margin-bottom: 49px;
 }
 
 
@@ -186,9 +186,10 @@ hgroup h2 {
 }
 
 hgroup.contacts{
-   margin-bottom: 56px;
+   margin-bottom: 57px;
 }
 hgroup.contacts h2{
+   margin-top: -2px;
    margin-bottom: 14px;
 }
 
@@ -227,7 +228,7 @@ hgroup.contacts p{
 
 .contacts-list li {
    display: inline-block;
-   vertical-align: middle;   
+  vertical-align: middle; 
 }
 
 .contacts-list li:not(:last-child){
