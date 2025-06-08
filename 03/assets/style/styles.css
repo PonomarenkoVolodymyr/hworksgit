@@ -79,7 +79,7 @@ nav ul li a:hover {
 }
 
 section {
-   padding: 100px 0 100px;
+   padding: 100px 0;
 }
 
 .bg-grey{
@@ -106,12 +106,16 @@ section {
    margin-bottom: 0;
 }
 
+.skills-section{
+   padding-bottom: 75px;
+}
+
 hgroup{
    margin-bottom: 50px;
 }
 
-hgroup h2 {
-   padding-top: 1px;
+
+hgroup h2 {   
    margin-bottom: 15px;
 }
 
@@ -157,8 +161,7 @@ hgroup h2 {
 }
 
 .portfolio-item h2 {
-   margin-top: -25px;
-   margin-bottom: 45px;
+     margin-bottom: 45px;
 }
 
 .portfolio-item img {
@@ -183,8 +186,10 @@ hgroup h2 {
 }
 
 hgroup.contacts{
-   margin-top: -3px;
    margin-bottom: 56px;
+}
+hgroup.contacts h2{
+   margin-bottom: 14px;
 }
 
 hgroup.contacts p{
@@ -221,7 +226,8 @@ hgroup.contacts p{
 }
 
 .contacts-list li {
-   display: inline-block;     
+   display: inline-block;
+   vertical-align: middle;   
 }
 
 .contacts-list li:not(:last-child){
