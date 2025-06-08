@@ -18,7 +18,7 @@ h1{
    color: #070707;;
    font-size: 3rem; 
    text-align: left;
-   margin-bottom: 50px;
+   margin-bottom: 45px;
 }
 
 h2{
@@ -87,7 +87,7 @@ section {
 }
 
 .about-me{
-   margin-bottom: 50px;
+   margin-bottom: 44px;
 }
 
 .content {
@@ -111,7 +111,8 @@ hgroup{
 }
 
 hgroup h2 {
-   margin-bottom: 20px;
+   padding-top: 1px;
+   margin-bottom: 15px;
 }
 
 .skill-list{
@@ -126,7 +127,7 @@ hgroup h2 {
 }
 
 .skill-item:not(:last-child){
-   margin-right: 97px;
+   margin-right: 98px;
 }
 
 .skill-item img{
@@ -156,7 +157,8 @@ hgroup h2 {
 }
 
 .portfolio-item h2 {
-   margin-bottom: 50px;
+   margin-top: -25px;
+   margin-bottom: 45px;
 }
 
 .portfolio-item img {
@@ -181,7 +183,12 @@ hgroup h2 {
 }
 
 hgroup.contacts{
-   margin-bottom: 60px;
+   margin-top: -3px;
+   margin-bottom: 56px;
+}
+
+hgroup.contacts p{
+  padding:0 100px;
 }
 
 .btn {
@@ -195,10 +202,11 @@ hgroup.contacts{
   border: none;
   cursor: pointer;
   border-radius: 22px;
-  padding: 5px 16px;
-  min-width: 80px;
+  padding: 5px 12px;
+  min-width: 180px;
   border: 2px solid #070707;
   margin-bottom: 30px;
+  letter-spacing: 0.1rem;
 }
 
 .btn:hover {
@@ -217,7 +225,7 @@ hgroup.contacts{
 }
 
 .contacts-list li:not(:last-child){
-   margin-right: 50px;
+   margin-right: 49px;
 }
 
 .contacts-list li a {
@@ -232,9 +240,4 @@ hgroup.contacts{
    display: inline-block;
    font-size: 0.875rem;
    color: #828282;
-
 }
-
-
-
-
