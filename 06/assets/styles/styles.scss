@@ -1,0 +1,144 @@
+$text-color: #2F281E;
+$accent-color: #FF9900; // main menu hover color 
+$accent-color-secondary: #D80B0A;  // main menu click color
+$btn-text: #FFFFFF;
+$btn-bg: #FF9900;
+$btn-bg-accent: #F03E3D; //button hover color
+$btn-bg-secondary: #D80B0A; //button click color
+$btn-secondary-text: #2F281E;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat;
+    color: $text-color;
+    font-size: 1rem;   
+    font-weight: 500;
+    line-height: 1.625rem;    
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+.container{
+    width: min(90%, 1230px);
+    margin: 0  auto;
+}
+
+
+header{ 
+    padding: 17px 0;
+    margin-bottom: 90px;
+
+    .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    } 
+}
+
+.main-menu{
+    display: flex;    
+    gap: 40px;
+
+    a{
+        text-decoration: none;
+        color: $text-color;
+        font-size: 1.125rem;        
+        font-weight: 400;
+        line-height: 1.75rem; 
+
+        &:hover {
+            color: $accent-color;
+        }
+
+        &:active {
+            color: $accent-color-secondary;
+        }
+    }
+}
+
+.btn-group{
+    display: flex;
+    gap: 32px;
+}
+
+.btn {
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $btn-text;
+    background-color: $btn-bg;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 25px;
+    cursor: pointer;
+
+    &:hover {
+        background-color:$btn-bg-accent;
+    }
+
+    &:active {
+        background-color: $btn-bg-secondary;
+    }
+
+    &.btn-secondary{
+        box-sizing: border-box;
+        border: 1px solid $btn-secondary-text;
+        color: $btn-secondary-text;
+        background-color: transparent;
+
+        &:hover {
+            color: $btn-bg-accent;
+            border-color: $btn-bg-accent;
+        }
+    
+        &:active {
+            color: $btn-bg-secondary;
+            border-color: $btn-bg-secondary;            
+        }
+    }
+}
+
+.hero {
+
+    .container {
+        display: flex;
+        flex-direction: row;
+
+        .hero-content {
+            padding: 97px 60px 97px 0;           
+
+            h2 {
+                font-size: 2.75rem;
+                font-weight: 700;
+                line-height: 3.375rem;
+                margin-bottom: 20px;         
+            }
+
+            p {
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.75rem;
+                margin-bottom: 30px;
+            }
+
+            .btn{
+                padding: 12px 45px;
+            }
+        }
+    }
+}
