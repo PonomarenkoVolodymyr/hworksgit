@@ -1,0 +1,146 @@
+$bg-body: #3399CC;
+$border-body: #2B81AC;
+$text-color:#FFFFFF;
+$bg-item-blue: #3399CC;
+$bg-item-aqua:#33CCCC;
+$bg-item-purpule:#996699;
+$bg-item-red:#C24747;
+$bg-item-yellow:#FFCC66;
+$bg-item-orange:#E2674A;
+$bg-item-lightgreen:#99CC99;
+$bg-item-greygreen:#669999;
+$bg-item-green:#339966;
+$bg-item-pink:#CC6699;
+$bg-item-darkpurpule:#666699;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: $bg-body;
+    color: $text-color;
+    border: 25px solid $border-body;
+    font-family: "Lucida Sans Unicode";
+    font-size: 1.375rem;
+    font-weight: 400;
+    
+
+
+header{
+    padding-top: 66px;
+    margin-bottom: 40px;  
+}
+
+.container{
+    width: min(90%, 1170px);
+    margin: 0 auto;
+
+    span{
+        font-size: 1.3125rem;
+        margin-right: 4px;
+    }
+
+    i{
+        font-size: 1.6875rem;
+    }
+}
+
+.weather{
+    list-style: none;    
+    font-size: 0;
+
+    li{
+        display: inline-block;
+        font-size: 1.375rem;
+        border-right: 2px solid #FFFFFF;
+        border-bottom: 2px solid #FFFFFF;
+        margin: 0;
+        padding-top: 26px;     
+        padding-bottom: 27px;     
+        text-align: center;
+
+        h2{
+            font-size: 1.375rem;
+            font-weight: 400;
+            margin-bottom: 4px;           
+        }
+
+        div{
+            opacity: 0.7;
+
+            i{
+                font-size: 2.625rem;
+                color: $text-color;
+                vertical-align: middle;
+            }
+        }
+
+       
+    }
+}
+
+main .container{
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 2px 0 0 2px;
+    
+    &:hover{
+        cursor: url('../images/cursor.svg'), auto;
+    }
+} 
+}
+
+// Styles for items
+.bg-blue{
+    background-color: $bg-item-blue;
+    width: 50%;
+}
+.bg-aqua{
+    background-color: $bg-item-aqua;
+    width: 25%;  
+}
+.bg-purpule{
+    background-color: $bg-item-purpule;
+    width: 25%;  
+}
+.bg-red{
+    background-color: $bg-item-red;
+    width: 25%;
+}
+.bg-orange{
+    background-color: $bg-item-orange;
+    width: 25%;   
+}
+.bg-yellow{
+    background-color: $bg-item-yellow;
+    width: 25%;   
+}
+.bg-lightgreen{
+    background-color: $bg-item-lightgreen;
+    width: 25%;    
+}
+.bg-greygreen{
+    background-color: $bg-item-greygreen;
+    width: 33.33%   
+}
+.bg-green{
+    background-color: $bg-item-green;
+    width: 33.33% 
+}
+.bg-pink{
+    background-color: $bg-item-pink;
+    width: 33.33% 
+}
+.bg-darkpurpule{
+    background-color: $bg-item-darkpurpule;
+    width: 100%;  
+}
+// Styles for items end
+
+footer.container span {
+    font-size: 1rem;    
+}
