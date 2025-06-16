@@ -13,6 +13,7 @@ $btn-secondary-text: #2F281E;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .2s ease-in;
 }
 
 body{
@@ -20,7 +21,8 @@ body{
     color: $text-color;
     font-size: 1rem;   
     font-weight: 500;
-    line-height: 1.625rem;    
+    line-height: 1.625rem;
+     
 }
 
 ul{
@@ -29,6 +31,43 @@ ul{
 
 img{
     vertical-align: top;
+}
+
+a{
+    text-decoration: none;
+    color: $text-color;
+    font-size: 1.125rem;        
+    font-weight: 400;
+    line-height: 1.75rem; 
+
+    &:hover {
+        color: $accent-color;
+    }
+
+    &:active {
+        color: $accent-color-secondary;
+    }
+}
+
+h2 {
+    font-size: 2.75rem;
+    font-weight: 700; 
+    line-height: normal;          
+}
+
+h3{
+    font-size: 1.375rem;
+    font-weight: 600;
+
+}
+
+h4{   
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.875rem; 
+}
+section{
+    margin-bottom: 90px;
 }
 
 .container{
@@ -50,23 +89,7 @@ header{
 
 .main-menu{
     display: flex;    
-    gap: 40px;
-
-    a{
-        text-decoration: none;
-        color: $text-color;
-        font-size: 1.125rem;        
-        font-weight: 400;
-        line-height: 1.75rem; 
-
-        &:hover {
-            color: $accent-color;
-        }
-
-        &:active {
-            color: $accent-color-secondary;
-        }
-    }
+    gap: 40px;   
 }
 
 .btn-group{
@@ -85,6 +108,11 @@ header{
     border-radius: 4px;
     padding: 12px 25px;
     cursor: pointer;
+
+    &.btn-long{
+        padding: 12px 40px;
+        
+    }
 
     &:hover {
         background-color:$btn-bg-accent;
@@ -112,33 +140,142 @@ header{
     }
 }
 
-.hero {
-
-    .container {
+.hero .container {
         display: flex;
         flex-direction: row;
 
-        .hero-content {
-            padding: 97px 60px 97px 0;           
+    .hero-content {
+        padding: 97px 60px 97px 0;           
 
-            h2 {
-                font-size: 2.75rem;
-                font-weight: 700;
-                line-height: 3.375rem;
-                margin-bottom: 20px;         
-            }
+        h2 {            
+            line-height: 3.375rem;
+            margin-bottom: 20px;         
+        }
 
-            p {
-                font-size: 1.125rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1.75rem;
-                margin-bottom: 30px;
-            }
+        p {
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.75rem;
+            margin-bottom: 30px;
+         }       
+    }    
+}
 
-            .btn{
-                padding: 12px 45px;
-            }
+.features {
+
+   background-image: url("../images/features/bg.svg");
+   background-repeat: no-repeat;
+   background-position: center bottom;
+
+    .container{
+    
+        text-align: center;
+    
+
+        h2{
+            display: inline-block;
+            max-width: 550px;
+            margin-bottom: 50px;        
+        }
+
+        ul{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        
+
+            li{
+                display: inline-block;
+                text-align: left;
+                max-width: 270px;            
+
+                img{
+                     margin-bottom: 30px;
+                }
+
+                h3{
+                    margin-bottom: 15px;
+                }
+
+            } 
+        }
+
+        .btn.btn-long{
+            margin-bottom: 90px;
+        }
+    }    
+}
+
+//footer
+
+footer .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-links{
+   
+    h4{
+        margin-bottom: 30px;
+    }
+
+    ul{
+
+        li{
+        display: block;
+        margin-bottom: 12px;
+        }       
+
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 25px;
+    margin-bottom: 70px;
+
+    h4{
+        max-width: 280px;        
+    }
+
+    input{
+        display: inline-block;
+        max-width: 320px;
+        height: 50px;
+        border: 1px solid #BCD0E5;
+        border-radius: 4px;
+        padding: 0px 10px;
+        font-size: 1rem;
+        font-weight: 400;
+        color:$text-color;
+
+        &::placeholder{            
+            color: #BCD0E5;
+            font-family: Montserrat;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &:hover{
+            cursor: pointer;
+            border: 1px solid $accent-color;
+        }
+
+        &:focus{
+            outline: none;
+            border: 1px solid $accent-color;
+            box-shadow: 0 0 5px $accent-color;
         }
     }
+    
+    button {
+        align-self: flex-start;
+    }
+
 }
