@@ -1,3 +1,5 @@
+@import url('fonts.css');
+
 *{
    margin: 0;
    padding: 0;
@@ -5,9 +7,9 @@
 }
 
 body{
-   font-family: "Open Sans", sans-serif;
+   font-family: 'Gilroy';
    font-size: 1.125rem;
-   font-weight: 400;
+   font-weight: 500;  
 }
 
 ul, ol {
@@ -62,8 +64,7 @@ nav ul li a.active{
 
 nav ul li a:hover {
  color: #070707;
- transform: scale(1.15);
- /* text-shadow: 0 0 1px #070707; */
+ transform: scale(1.15); 
 }
 
 
@@ -93,8 +94,7 @@ section {
 .content {
    max-width: 480px;
    margin: 0 auto;
-   font-size: 1.125rem;
-   font-weight: 400;
+   font-size: 1.125rem;   
    text-align: center;
 }
 
@@ -227,7 +227,7 @@ hgroup.contacts p{
 
 .contacts-list li {
    display: inline-block;
-  vertical-align: middle; 
+   vertical-align: middle; 
 }
 
 .contacts-list li:not(:last-child){
