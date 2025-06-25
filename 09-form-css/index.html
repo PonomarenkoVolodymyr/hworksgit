@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="assets/styles/styles.min.css">
+    <title>09 - Form CSS</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Create an Account</h2>
+            <form method="post" enctype="multipart/form-data" id="login">
+                <div class="input-group">
+                    <label for="name">First Name
+                        <input type="text" id="name" name="name">
+                    </label>
+                    <label for="last-name">Last Name
+                        <input type="text" name="last-name" id="last-name">
+                    </label>
+                </div>
+                <label for="email">E-mail
+                    <input type="email" name="email" id="email">
+                    <span>We'll never share your email with anyone else.</span>
+                </label>
+                <div class="radio-group">
+                    <label for="male" class="radio">
+                        <input type="radio" name="gender" id="male" value="male" required>
+                        <span>Male</span>
+                    </label>
+                    <label for="female" class="radio">
+                        <input type="radio" name="gender" id="female" value="female">
+                        <span>Female</span>
+                    </label>
+                </div>
+                <div class="input-group">
+                    <label for="name">Country
+                        <select name="country" id="country">
+                            <option value="Select" selected disabled>Select</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="France">France</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Greece">Greece</option>
+                        </select>
+                    </label>
+                    <label for="city">City
+                        <input type="text" name="city" id="city">
+                    </label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <span class="terms">By clicking the 'Sign Up' button, you confirm that you accept our <span
+                        class="blue-text">Terms of Use</span> and <span class="blue-text">Privacy Policy</span>.
+                </span>
+            </form>
+            <footer>
+                <div class="container">
+                    <span>Have an account?</span>
+                    <span class="blue-text">Log in</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/plugins/select2/js/select2.full.min.js"></script>
+    <script>
+        $(function () {
+            $('select').select2();
+        });
+    </script>
+</body>
+
+</html>
