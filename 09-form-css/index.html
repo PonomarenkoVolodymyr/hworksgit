@@ -16,14 +16,14 @@
             <form method="post" enctype="multipart/form-data" id="login">
                 <div class="input-group">
                     <label for="name">First Name
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" required>
                     </label>
                     <label for="last-name">Last Name
-                        <input type="text" name="last-name" id="last-name">
+                        <input type="text" name="last-name" id="last-name" required>
                     </label>
                 </div>
                 <label for="email">E-mail
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
                     <span>We'll never share your email with anyone else.</span>
                 </label>
                 <div class="radio-group">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="input-group">
                     <label for="name">Country
-                        <select name="country" id="country">
+                        <select name="country" id="country" required>
                             <option value="Select" selected disabled>Select</option>
                             <option value="Ukraine">Ukraine</option>
                             <option value="France">France</option>
@@ -47,7 +47,7 @@
                             <option value="Greece">Greece</option>
                         </select>
                     </label>
-                    <label for="city">City
+                    <label for="city" required>City
                         <input type="text" name="city" id="city">
                     </label>
                 </div>
