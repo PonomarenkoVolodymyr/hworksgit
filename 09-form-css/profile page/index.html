@@ -42,7 +42,7 @@
                     <label for="country">Country
                         <div class="select-wrap">
                             <select name="country" id="country" required>
-                                <option value="Select" selected disabled>Select</option>
+                                <option value="" selected disabled>Select</option>
                                 <option value="Ukraine">Ukraine</option>
                                 <option value="France">France</option>
                                 <option value="Italy">Italy</option>
@@ -51,8 +51,8 @@
                             </select>
                         </div>
                     </label>
-                    <label for="city" required>City
-                        <input type="text" name="city" id="city">
+                    <label for="city">City
+                        <input type="text" name="city" id="city" required>
                     </label>
                 </div>
                 <div class="input-row">
@@ -64,6 +64,7 @@
                     </label>
                 </div>
                 <button class="update-btn" type="submit">Update</button>
+            </form>
         </div>
     </div>
     <script src="../assets/js/jquery-3.7.1.js"></script>
