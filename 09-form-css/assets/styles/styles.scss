@@ -321,7 +321,6 @@ footer .container {
 
 .profile {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 20px;
 }
@@ -339,19 +338,16 @@ footer .container {
 }
 
 .upload {
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     gap: 10px;
-
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
 
 .fake-file {
-
     width: 138px;
     height: 30px;
-    padding: 7px 10px;
+    padding: 0;
     border: 1px solid $border-color;
     border-radius: 5px;
     outline: none;
@@ -360,28 +356,42 @@ footer .container {
     font-family: Inter;
     font-size: 0.9375rem;
     font-weight: 400;
-    background: url(../icons/Photo-camera.svg) no-repeat right 10px center;
     cursor: pointer;
 
-    &:focus {
-        border: 1px solid $accent-color;
-    }
-
-    input {
-        width: 100%;
-        height: 100%;
+    input[type='file'] {
         position: absolute;
         left: 0;
         top: 0;
+        width: 100% !important;
+        height: 100% !important;
         opacity: 0;
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        background: url(../icons/Photo-camera.svg) no-repeat;
+        right: 6px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        background: url(../icons/Photo-camera.svg) no-repeat;
+        border-right: 10px;
+    }
+
+    &:focus {
+        border: 1px solid $accent-color;
     }
 }
 
 
 
+
 button[type='reset'] {
-    max-width: 30px;
+    width: 30px;
     height: 30px;
     background-color: #FFF;
     border: 1px solid $border-color;
@@ -391,11 +401,12 @@ button[type='reset'] {
 
 
 .upload-description {
-    color: $border-color;
+    color: $main-secondary-color;
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.125rem;
     letter-spacing: -0.00625rem;
+    padding-left: 1px;
 }
 
 .update-btn {
@@ -410,4 +421,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .profile-title {
     padding-left: 1px;
+}
+
+form[id="profile"] .input-row:nth-child(2) {
+    margin-bottom: 14px;
 }

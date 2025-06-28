@@ -14,20 +14,24 @@
     <div class="wrapper">
         <div class="container">
             <h2 class="profile-title">Profile</h2>
-            <form method="post" id="profile" enctype="multipart/form-data"
+            <form method="post" id="profile" enctype="multipart/form-data" name="profile"
                 onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('profile')))).toString()));return false;">
-                <div class="input-row profile">
-                    <div class="photo-wrap">
-                        <img src="../assets/images/user-pic.png" alt="user photo">
-                    </div>
-                    <div>
-                        <div class="upload">
-                            <div class="fake-file">
-                                <input type="file" id="file" name="photo">
-                            </div>
-                            <button type="reset"></button>
+                <div class="input-row">
+                    <div class="profile">
+                        <div class="photo-wrap">
+                            <img src="../assets/images/user-pic.png" alt="user photo">
                         </div>
-                        <div class="upload-description">Up to 1 MB (300x300 px)</div>
+                        <div>
+                            <div class="upload">
+                                <div class="fake-file">
+                                    <input type="file" id="user-photo" name="user-photo">
+                                </div>
+                                <div>
+                                    <button type="reset"></button>
+                                </div>
+                            </div>
+                            <div class="upload-description">Up to 1 MB (300x300 px)</div>
+                        </div>
                     </div>
                 </div>
                 <div class="input-row">
@@ -40,23 +44,21 @@
                 </div>
                 <div class="input-row">
                     <label for="country">Country
-                        <div class="select-wrap">
-                            <select name="country" id="country" required>
-                                <option value="" selected disabled>Select</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="France">France</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Portugal">Portugal</option>
-                                <option value="Greece">Greece</option>
-                            </select>
-                        </div>
+                        <select name="country" id="country" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="France">France</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Greece">Greece</option>
+                        </select>
                     </label>
                     <label for="city">City
                         <input type="text" name="city" id="city" required>
                     </label>
                 </div>
                 <div class="input-row">
-                    <label for="zip-code">ZIP Code
+                    <label for="zip-code">Zip Code
                         <input type="text" id="zip-code" name="zip-code">
                     </label>
                     <label for="tel">Phone Number
