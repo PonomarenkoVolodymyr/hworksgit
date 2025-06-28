@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/styles/styles.min.css">
+    <title>09 - Form CSS</title>
+</head>
+
+<body>
+    <a class href="../index.html"> &lt; Back</a>
+    <div class="wrapper">
+        <div class="container">
+            <h2 class="profile-title">Profile</h2>
+            <form method="post" id="profile" enctype="multipart/form-data"
+                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('profile')))).toString()));return false;">
+                <div class="input-row profile">
+                    <div class="photo-wrap">
+                        <img src="../assets/images/user-pic.png" alt="user photo">
+                    </div>
+                    <div>
+                        <div class="upload">
+                            <div class="fake-file">
+                                <input type="file" id="file">
+                            </div>
+                            <button type="reset"></button>
+                        </div>
+                        <div class="upload-description">Up to 1 MB (300x300 px)</div>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label for="name">Name
+                        <input type="text" id="name" name="name" required>
+                    </label>
+                    <label for="email">E-mail
+                        <input type="email" name="email" id="email" required>
+                    </label>
+                </div>
+                <div class="input-row">
+                    <label for="country">Country
+                        <div class="select-wrap">
+                            <select name="country" id="country" required>
+                                <option value="Select" selected disabled>Select</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="France">France</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Greece">Greece</option>
+                            </select>
+                        </div>
+                    </label>
+                    <label for="city" required>City
+                        <input type="text" name="city" id="city">
+                    </label>
+                </div>
+                <div class="input-row">
+                    <label for="zip-code">ZIP Code
+                        <input type="text" id="zip-code" name="zip-code">
+                    </label>
+                    <label for="tel">Phone Number
+                        <input type="number" name="tel" id="tel">
+                    </label>
+                </div>
+                <button class="update-btn" type="submit">Update</button>
+        </div>
+    </div>
+    <script src="../assets/js/jquery-3.7.1.js"></script>
+    <script src="../assets/plugins/select2/js/select2.full.min.js"></script>
+    <script>
+        $(function () {
+            $('select').select2();
+        });
+    </script>
+</body>
+
+</html>

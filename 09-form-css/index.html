@@ -10,11 +10,13 @@
 </head>
 
 <body>
+    <a class href="profile page/index.html"> to Profile</a>
     <div class="wrapper">
         <div class="container">
             <h2>Create an Account</h2>
-            <form method="post" enctype="multipart/form-data" id="login">
-                <div class="input-group">
+            <form method="post" id="login"
+                onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('login')))).toString()));return false;">
+                <div class="input-row">
                     <label for="name">First Name
                         <input type="text" id="name" name="name" required>
                     </label>
@@ -22,13 +24,15 @@
                         <input type="text" name="last-name" id="last-name" required>
                     </label>
                 </div>
-                <label for="email">E-mail
-                    <input type="email" name="email" id="email" required>
-                    <span>We'll never share your email with anyone else.</span>
-                </label>
-                <div class="radio-group">
+                <div class="input-row">
+                    <label for="email">E-mail
+                        <input type="email" name="email" id="email" required>
+                        <span>We'll never share your email with anyone else.</span>
+                    </label>
+                </div>
+                <div class="input-row">
                     <label for="male" class="radio">
-                        <input type="radio" name="gender" id="male" value="male" required>
+                        <input type="radio" name="gender" id="male" value="male" checked required>
                         <span>Male</span>
                     </label>
                     <label for="female" class="radio">
@@ -36,30 +40,34 @@
                         <span>Female</span>
                     </label>
                 </div>
-                <div class="input-group">
-                    <label for="name">Country
-                        <select name="country" id="country" required>
-                            <option value="Select" selected disabled>Select</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="France">France</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Greece">Greece</option>
-                        </select>
+                <div class="input-row">
+                    <label for="country">Country
+                        <div class="select-wrap">
+                            <select name="country" id="country" required>
+                                <option value="Select" selected disabled>Select</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="France">France</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Greece">Greece</option>
+                            </select>
+                        </div>
                     </label>
                     <label for="city" required>City
                         <input type="text" name="city" id="city">
                     </label>
                 </div>
                 <button type="submit">Sign Up</button>
-                <span class="terms">By clicking the 'Sign Up' button, you confirm that you accept our <span
-                        class="blue-text">Terms of Use</span> and <span class="blue-text">Privacy Policy</span>.
-                </span>
+                <div class="terms">
+                    By clicking the 'Sign Up' button, you confirm that you accept our
+                    <span class="blue-text">Terms of Use<span> and
+                            <span class="blue-text">Privacy Policy</pan>
+                </div>
             </form>
             <footer>
                 <div class="container">
-                    <span>Have an account?</span>
-                    <span class="blue-text">Log in</span>
+                    Have an account?
+                    <span class="blue-text">Log In</span>
                 </div>
             </footer>
         </div>

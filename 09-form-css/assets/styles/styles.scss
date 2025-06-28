@@ -1,5 +1,13 @@
 @import url('fonts.css');
 
+$bg-color: #F7F7F7;
+$title-color: #1C1C1C;
+$main-color: #545454;
+$main-secondary-color: #969696;
+$accent-color: #007BFF;
+$border-color: #E4E4E4;
+$btn-hover-color: #0057b4;
+
 
 *,
 *::before,
@@ -19,6 +27,23 @@ button {
     transition: all .2s ease;
 }
 
+a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: $accent-color;
+    color: #FFF;
+    border-radius: 5px;
+    text-decoration: none;
+
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
 button {
     cursor: pointer;
 }
@@ -30,6 +55,18 @@ img {
     object-fit: cover;
 }
 
+body {
+    color: $main-color;
+    font-family: Roboto;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: -0.0125rem;
+    background-color: $bg-color;
+    padding-top: 55px;
+    position: relative;
+}
+
 .container {
     width: min(90%, 570px);
     margin: 0 auto;
@@ -38,18 +75,8 @@ img {
 
 }
 
-
-body {
-    font-size: 1rem;
-    font-family: sans-serif;
-    background-color: #F7F7F7;
-    padding-top: 55px;
-}
-
-
 h2 {
-    color: #1C1C1C;
-    font-family: Roboto;
+    color: $title-color;
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2rem;
@@ -57,78 +84,55 @@ h2 {
     padding-left: 2px;
 }
 
-label {
-    color: #545454;
-    font-family: Roboto;
-    font-size: 0.9375rem;
-    font-weight: 400;
-    line-height: 1.375rem;
-    letter-spacing: -0.0125rem;
+.input-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.input-row>label:not(label[class='radio']) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 input:not(input[type='radio']),
 .select2-container--default .select2-selection--single {
-    display: block;
+    width: 100%;
     margin-top: 7px;
     height: 38px;
     padding: 7px 10px;
-    border: 1px solid #969696;
+    border: 1px solid $border-color;
     border-radius: 5px;
     outline: none;
 
-    color: #545454;
+
     font-family: Inter;
     font-size: 0.9375rem;
     font-weight: 400;
-    line-height: 1.375rem;
-    letter-spacing: -0.0125rem;
+
 
     &:focus {
-        border: 1px solid #007BFF;
-    }
-}
-
-
-.input-group {
-
-    margin-bottom: 20px;
-
-    label {
-        display: inline-block;
-        width: calc(50% - 8.5px);
-
-
-        input,
-        select {
-            width: 100%;
-        }
-
-        &:first-child {
-            margin-right: 12px;
-        }
+        border: 1px solid $accent-color;
     }
 }
 
 input[type='email'] {
-    width: 100%;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
+}
+
+label {
+    padding-left: 2px;
 }
 
 span {
-    color: #969696;
-    width: 100%;
-    font-family: Roboto;
+    color: $main-secondary-color;
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.125rem;
     letter-spacing: -0.00625rem;
 }
 
-label[for='email'] {
-    padding-left: 2px;
-    display: block;
-    margin-bottom: 20px;
-}
 
 .radio-group {
     margin-bottom: 19px;
@@ -136,15 +140,10 @@ label[for='email'] {
 }
 
 .radio {
-    color: #545454;
-    font-family: Roboto;
     font-size: 0.9375rem;
-    font-weight: 400;
-    line-height: 1.375rem;
-    letter-spacing: -0.0125rem;
 
     &:first-child {
-        margin-right: 20px;
+        margin-right: 7px;
     }
 
     input {
@@ -160,7 +159,7 @@ label[for='email'] {
             height: 20px;
             border-radius: 50%;
             background-color: #FFF;
-            border: 1px solid #E4E4E4;
+            border: 1px solid $border-color;
             position: absolute;
 
 
@@ -168,8 +167,8 @@ label[for='email'] {
 
         &:checked {
             &::before {
-                background-color: #007BFF;
-                border: 1px solid #007BFF;
+                background-color: $accent-color;
+                border: 1px solid $accent-color;
             }
 
             &::after {
@@ -182,9 +181,6 @@ label[for='email'] {
                 position: absolute;
                 left: 6px;
                 top: 6px;
-
-
-
             }
 
         }
@@ -192,12 +188,9 @@ label[for='email'] {
 
     span {
         padding-left: 25px;
-        color: #545454;
-        font-family: Roboto;
+        color: $main-color;
         font-size: 0.9375rem;
-        font-weight: 400;
         line-height: 1.375rem;
-        letter-spacing: -0.0125rem;
     }
 }
 
@@ -206,10 +199,9 @@ button {
     width: 100%;
     height: 38px;
     padding: 8px 0;
-    background-color: #007BFF;
+    background-color: $accent-color;
     color: #FFF;
     text-align: center;
-    font-family: Roboto;
     font-size: 0.9375rem;
     font-weight: 500;
     line-height: 1.375rem;
@@ -217,69 +209,205 @@ button {
     border: none;
     border-radius: 5px;
     margin-bottom: 22px;
+
+    &:hover {
+        background: $btn-hover-color;
+    }
 }
 
 
-.blue-text {
-    color: #007BFF;
-    cursor: pointer;
-}
+
 
 .terms {
-    display: block;
-    margin: 0 auto;
-    max-width: 410px;
+    padding: 0 70px 20px;
+    margin: 0 auto 20px;
+    color: $main-secondary-color;
     text-align: center;
-    padding: 0 25px;
-    margin-bottom: 20px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    letter-spacing: -0.00625rem;
+    position: relative;
 
+
+    .blue-text {
+        color: $accent-color;
+        cursor: pointer;
+        font-family: Inter;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $border-color;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+    }
 }
 
 footer .container {
     text-align: center;
     margin: 0 auto;
-    padding: 21px 0 16px;
-    position: relative;
+    padding: 0;
 
-    &::before {
-        display: block;
-        content: '';
-        width: 100%;
-        height: 1px;
-        background-color: #E4E4E4;
-        position: absolute;
-        left: 0;
-        top: 0;
+    .blue-text {
+        color: $accent-color;
+        font-size: .95rem;
+        font-weight: 500;
+        margin-left: 17px;
 
-
-
-    }
-
-    span {
-        color: #545454;
-        text-align: right;
-        font-family: Roboto;
-        font-size: 0.9375rem;
-        font-weight: 400;
-        line-height: 1.375rem;
-        letter-spacing: -0.0125rem;
-
-        &:first-child {
-            margin-right: 15px;
-        }
-
-        &.blue-text {
-            color: #007BFF;
-            font-weight: 500;
-
-            &:hover {
-                cursor: pointer;
-            }
+        &:hover {
+            cursor: pointer;
         }
     }
 }
 
+
+
+.select2-container {
+    width: 100% !important;
+    display: block;
+}
+
+.select2-container--default .select2-selection__arrow {
+    display: none;
+}
+
+.select2-selection__rendered {
+    color: $main-color;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.375rem;
+    // letter-spacing: 0;
+    padding-left: 0 !important;
+
+}
+
+.select2-container--default .select2-results__option {
+    color: $main-secondary-color;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered[title="Select"] {
+    color: $main-secondary-color; // серый для placeholder
+}
+
 .select2-container--default .select2-selection--single {
+    width: 100%;
+    position: relative;
+    padding-right: 15px;
+    appearance: none;
     display: flex;
-    vertical-align: top;
+    align-items: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 7px;
+        width: 18px;
+        height: 18px;
+        background: url('../icons/select-double-arrows.svg') no-repeat center/contain;
+
+    }
+}
+
+//===========================
+//Styles for Profile page
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.upload {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    margin-bottom: 9px;
+}
+
+
+.fake-file {
+
+    width: 138px;
+    height: 30px;
+    padding: 7px 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    background: url(../icons/Photo-camera.svg) no-repeat right 10px center;
+    cursor: pointer;
+
+    &:focus {
+        border: 1px solid $accent-color;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+
+button[type='reset'] {
+    max-width: 30px;
+    height: 30px;
+    background-color: #FFF;
+    border: 1px solid $border-color;
+    background: url(../icons/Trash.svg) no-repeat center;
+    margin-bottom: 0;
+}
+
+
+.upload-description {
+    color: $border-color;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    letter-spacing: -0.00625rem;
+}
+
+.update-btn {
+    max-width: 150px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.profile-title {
+    padding-left: 1px;
 }
