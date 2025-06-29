@@ -1,20 +1,19 @@
-
-	$bg-header: #bcbabe;
-	$bg-main: #f1f1f2;
-	$text-color-secondary: #1995ad;	
-	$text-color: #2F281E;	
-	$accent-color: #FF8984;
-	
+$bg-header: #bcbabe;
+$bg-main: #f1f1f2;
+$text-color-secondary: #1995ad;
+$text-color: #2F281E;
+$accent-color: #FF8984;
 
 
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-body{
+body {
     font-family: "Roboto", sans-serif;
     background-color: $bg-main;
 }
@@ -25,17 +24,17 @@ hgroup {
     margin-bottom: 20px;
     background-color: $bg-header;
     color: $text-color;
-    
 
-    h1{
+
+    h1 {
         margin-bottom: 15px;
     }
 }
 
-.container{
-    width: min(90%, 600px) ;
-	margin: 0 auto;
-	text-align: center;
+.container {
+    width: min(90%, 600px);
+    margin: 0 auto;
+    text-align: center;
 }
 
 ul {
@@ -43,10 +42,11 @@ ul {
     list-style: none;
 }
 
-li{
+li {
     font-size: 1.25rem;
     margin-bottom: 10px;
 }
+
 img {
     width: 20px;
     height: 20px;
@@ -54,15 +54,15 @@ img {
     margin-right: 5px;
 }
 
-a{
+a {
     text-decoration: none;
     color: $text-color;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
-        color: $text-color-secondary;       
+        color: $text-color-secondary;
     }
-    
+
     &:active {
         color: $accent-color;
     }
