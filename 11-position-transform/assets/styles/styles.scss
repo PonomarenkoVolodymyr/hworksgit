@@ -115,7 +115,8 @@ nav {
 
 main {
     padding-top: 185px;
-
+    background: url("../images/bg-picture.png") no-repeat right 0 top 185px;
+    background-attachment: fixed;
 }
 
 .chapter {
