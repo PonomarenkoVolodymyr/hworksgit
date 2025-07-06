@@ -6,6 +6,17 @@ $text-color: #333333;
 $title-color: #666;
 $socials-color: #CCCCCC;
 
+@mixin corner ($x-pos, $y-pos) {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 23.26%;
+    aspect-ratio: 1;
+    border-#{$x-pos}: 1px solid $accent-color;
+    border-#{$y-pos}: 1px solid $accent-color;
+
+}
+
 *,
 *::before,
 *::after {
@@ -59,7 +70,7 @@ hgroup {
         text-transform: uppercase;
         color: $sub-title-color;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     h1 {
@@ -70,7 +81,7 @@ hgroup {
         font-weight: 900;
         line-height: 4.125rem;
         text-transform: uppercase;
-        padding-bottom: 50px;
+        padding-bottom: 40px;
         border-bottom: 1px solid $accent-color;
         position: relative;
 
@@ -96,18 +107,49 @@ hgroup {
 
     .photo-container {
         max-width: 585px;
-        padding: 65px 14.53% 65px 11.97%;
+        padding: 94px 14.53% 65px 11.97%;
         border-right: 1px solid $accent-color;
     }
 
     .inner-wrap {
         max-width: 430px;
         aspect-ratio: 1;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            @include corner(left, top);
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            position: absolute;
+            @include corner(top, right);
+            top: 0;
+            right: 0;
+        }
 
         .inner-wrap-2 {
             width: 100%;
             height: 100%;
             padding: 15px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                @include corner(left, bottom);
+                bottom: 0;
+                left: 0;
+            }
+
+            &::after {
+                position: absolute;
+                @include corner(right, bottom);
+                bottom: 0;
+                right: 0;
+            }
+
 
             img {
                 vertical-align: top;
@@ -120,7 +162,7 @@ hgroup {
 
     .content {
         max-width: 585px;
-        padding: 65px 11.97% 65px 14.53%;
+        padding: 99px 11.97% 65px 14.53%;
         text-align: center;
 
         h2 {
@@ -130,7 +172,7 @@ hgroup {
             font-size: 2.25rem;
             font-weight: 900;
             text-transform: capitalize;
-            margin-bottom: 60px;
+            margin-bottom: 52px;
             position: relative;
 
             &::after {
@@ -140,7 +182,7 @@ hgroup {
                 height: 1px;
                 background-color: $accent-color;
                 position: absolute;
-                bottom: -30px;
+                bottom: -22px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -153,7 +195,7 @@ hgroup {
             font-weight: 400;
             line-height: 2.25rem;
             text-transform: capitalize;
-            margin-bottom: 30px;
+            margin-bottom: 22px;
         }
 
         ul {
@@ -161,7 +203,7 @@ hgroup {
             justify-content: center;
             align-items: center;
             gap: 5px;
-            margin-bottom: 49px;
+            margin-bottom: 47px;
 
 
             a {
@@ -198,7 +240,22 @@ hgroup {
         font-weight: 500;
         line-height: 1.5rem;
         color: $text-color;
-        margin-bottom: 49px;
+        padding-bottom: 20px;
+        margin-bottom: 29px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            // background-color: #FC0;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, $accent-color 0%, $accent-color 20%, transparent 20%, transparent 30%, $accent-color 30%, $accent-color 70%, transparent 70%, transparent 80%, $accent-color 80%, $accent-color 100%, );
+        }
     }
 
     .btn {
