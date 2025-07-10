@@ -134,7 +134,7 @@ header {
 section {
   margin-bottom: 90px;
 
-  &.first {
+  &.hero {
     height: 600px;
     background: url(../images/bg-image.png) no-repeat center bottom / cover;
 
@@ -227,6 +227,7 @@ h3 {
 
       .picture {
         height: 260px;
+
       }
 
       .description {
@@ -295,6 +296,10 @@ h3 {
   }
 }
 
+.bottom-info {
+  margin-bottom: 90px;
+}
+
 .bottom-content {
   display: flex;
   justify-content: space-between;
@@ -316,8 +321,6 @@ h3 {
         letter-spacing: 0.14375rem;
         color: $title-color;
       }
-
-      a {}
     }
 
     &:last-child {
@@ -449,18 +452,8 @@ footer {
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-
-    .blue {
-      width: 40px;
-      height: 40px;
-      background-color: aqua;
-    }
-
   }
 
-  .picture {
-    height: 280px;
-  }
 
   .content-wrap .content-block {
     &.reverse {
@@ -520,10 +513,14 @@ footer {
     flex-direction: column;
     gap: 50px;
 
-    // &:nth-last-child() {
-    //   align-items: end;
-    // }
+    &>div {
+      width: 100%;
 
+    }
+  }
+
+  footer {
+    padding-bottom: 50px;
   }
 
   .footer-wrap {
@@ -534,5 +531,79 @@ footer {
     .contacts {
       text-align: center;
     }
+  }
+
+  .comment div {
+    text-align: right;
+  }
+}
+
+
+
+
+@media screen and (max-width: 545px) {
+  h2 {
+    text-align: center;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 30px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .container .content-wrap {
+    .content-block {
+      flex-direction: column;
+      align-items: center;
+
+      .picture {
+        width: 100%;
+      }
+
+      .description {
+        width: 100%;
+      }
+    }
+
+    &.col-3 {
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+
+      .content-block {
+        &.vertical {
+          flex-direction: column;
+          align-items: center;
+
+          &:nth-child(2) {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    &.col-2 {
+
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      .content-block {
+        &.vertical {
+          .picture {
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
+
+  .comment div {
+    text-align: left;
   }
 }
