@@ -212,6 +212,9 @@ header {
       position: absolute;
       top: 4px;
       right: 0;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }
@@ -559,6 +562,9 @@ footer {
       position: absolute;
       top: 3px;
       left: -60px;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }  
 
