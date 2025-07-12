@@ -212,7 +212,8 @@ header {
       position: absolute;
       top: 4px;
       right: 0;
-      &:hover{
+
+      &:hover {
         cursor: pointer;
       }
     }
@@ -539,10 +540,11 @@ footer {
 }
 
 @media screen and (max-width: 950px) {
-  header{
+  header {
     height: 60px;
     padding: 18px 0;
   }
+
   nav {
     display: none;
   }
@@ -562,29 +564,31 @@ footer {
       position: absolute;
       top: 3px;
       left: -60px;
-      &:hover{
+
+      &:hover {
         cursor: pointer;
       }
     }
-  }  
+  }
 
- 
-  
+
+
 
   section {
-    
-    &.hero{
+
+    &.hero {
       height: 320px;
-  
-      h1{
+
+      h1 {
         font-size: 2.25rem;
-        line-height: 3.125rem; 
+        line-height: 3.125rem;
         letter-spacing: 0.1125rem;
         padding-top: 30px;
         padding-right: 120px;
       }
-    }     
+    }
   }
+
   .content-wrap .content-block {
     &.reverse {
       .description {
@@ -669,24 +673,20 @@ footer {
 }
 
 @media screen and (max-width: 545px) {
-  
-
- 
-  
 
   section {
-    
-    &.hero{
+
+    &.hero {
       height: 500px;
-  
-      h1{
+
+      h1 {
         font-size: 1.875rem;
         line-height: 3.125rem;
         letter-spacing: 0.09375rem;
         padding-top: 70px;
         padding-right: 0px;
       }
-    }     
+    }
   }
 
   h2 {
