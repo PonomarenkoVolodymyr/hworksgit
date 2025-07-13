@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>13 - Manifest. RWD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="assets/styles/style.min.css">
+  <title>13 - Manifest. RWD</title>
 </head>
 
 <body>
@@ -24,40 +25,37 @@
       <div class="container">
         <div class="logo-wrap">
           <a href="#">
-            <img src="assets/images/logo.svg" alt="logo">
+            <img class="lazy" data-src="assets/images/logo.svg" alt="logo">
           </a>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Works</a></li>
-            <li><a href="#portfolio">Blog</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-          </ul>
-        </nav>
-        <div class="search">
-          <svg width="17px" height="17px">
-            <use xlink:href="assets/images/icons/search.svg"></use>
-          </svg>
-        </div>
-        <div class="mob-nav">
-          <div class="mob-search">
-            <svg width="20px" height="20px">
-              <use xlink:href="assets/images/icons/search.svg"></use>
-            </svg>
-          </div>           
-            <button class="hamburger hamburger--vortex" type="button" onclick="toggleMenu()">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>          
+        <div class="header-right">
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Works</a></li>
+              <li><a href="#portfolio">Blog</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+          <div class="mob-nav">
+            <div class="search">
+              <img src="assets/images/icons/search.svg" alt="search picture">
+            </div>
+            <div class="burger-wrap">
+              <button class="hamburger hamburger--vortex" type="button" onclick="toggleMenu()">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
     <main>
       <section class="hero">
-        <div class="container">
+        <div class="container ">
           <h1>Manifest is a newborn theme.
             Clean, simple and fast.</h1>
         </div>
@@ -66,9 +64,9 @@
         <div class="container">
           <h2>Blog</h2>
           <div class="content-wrap">
-            <div class="content-block">
+            <div class="content-block wow animate__backInLeft">
               <div class="picture ">
-                <img src="assets/images/content-img/wall-arrow.png" alt="wall arrow picture">
+                <img class="lazy" data-src="assets/images/content-img/wall-arrow.png" alt="wall arrow picture">
               </div>
               <div class="description">
                 <p class="sup-title">Technology, Interface Design</p>
@@ -82,11 +80,11 @@
                     alt="viev all"></p>
               </div>
             </div>
-            <div class="content-block reverse">
+            <div class="content-block reverse wow animate__backInRight">
               <div class="picture">
                 <picture>
-                  <source srcset="assets/images/bg-image@545.png" media="(width <= 545px)">
-                  <img src="assets/images/bg-image.png" alt="building picture">
+                  <source data-srcset="assets/images/bg-image@545.png" media="(width <= 545px)">
+                  <img class="lazy" data-src="assets/images/bg-image.png" alt="building picture">
                 </picture>
               </div>
               <div class="description">
@@ -111,9 +109,9 @@
             <a href="#">Viev All <img class="arrow-img" src="assets/images/icons/Arrow.svg" alt="viev all"></a>
           </div>
           <div class="content-wrap col-3">
-            <div class="content-block vertical">
+            <div class="content-block vertical wow animate__backInLeft">
               <div class="picture">
-                <img src="assets/images/content-img/street-light.png" alt="street light picture">
+                <img class="lazy" data-src="assets/images/content-img/street-light.png" alt="street light picture">
               </div>
               <div class="description">
                 <div class="date">
@@ -124,9 +122,9 @@
                 <p>UI has to make a huge visual difference between warning, an alert and a success.</p>
               </div>
             </div>
-            <div class="content-block vertical">
+            <div class="content-block vertical wow animate__backInDown">
               <div class="picture">
-                <img src="assets/images/content-img/wall-arrow.png" alt="wall arrow picture">
+                <img class="lazy" data-src="assets/images/content-img/wall-arrow.png" alt="wall arrow picture">
               </div>
               <div class="description">
                 <div class="date">
@@ -137,9 +135,9 @@
                 <p>UI has to make a huge visual difference between warning, an alert and a success.</p>
               </div>
             </div>
-            <div class="content-block vertical">
+            <div class="content-block vertical wow animate__backInRight">
               <div class="picture">
-                <img src="assets/images/content-img/roof.png" alt="roof picture">
+                <img class="lazy" data-src="assets/images/content-img/roof.png" alt="roof picture">
               </div>
               <div class="description">
                 <div class="date">
@@ -160,9 +158,9 @@
             <a href="#">Viev All <img class="arrow-img" src="assets/images/icons/Arrow.svg" alt="viev all"></a>
           </div>
           <div class="content-wrap col-2">
-            <div class="content-block vertical">
+            <div class="content-block vertical wow animate__backInLeft">
               <div class="picture">
-                <img src="assets/images/content-img/abstract.png" alt="wall arrow picture">
+                <img class="lazy" data-src="assets/images/content-img/abstract.png" alt="wall arrow picture">
               </div>
               <div class="description">
                 <div class="date">
@@ -175,9 +173,9 @@
                   and as we learned — diversity and success go hand in hand</p>
               </div>
             </div>
-            <div class="content-block vertical">
+            <div class="content-block vertical wow animate__backInRight">
               <div class="picture">
-                <img src="assets/images/content-img/wall-sign.png" alt="roof picture">
+                <img class="lazy" data-src="assets/images/content-img/wall-sign.png" alt="roof picture">
               </div>
               <div class="description">
                 <div class="date">
@@ -189,7 +187,7 @@
               </div>
             </div>
           </div>
-          <div class="btn-wrap">
+          <div class="btn-wrap wow animate__backInUp">
             <button class="button">Load more</button>
           </div>
         </div>
@@ -197,7 +195,7 @@
       <div class="bottom-info">
         <div class="container">
           <div class="bottom-content">
-            <div class="veronalabs">
+            <div class="veronalabs wow animate__backInLeft">
               <div>
                 Full-time UI/UX designer
                 <div>
@@ -206,7 +204,7 @@
                 </div>
               </div>
             </div>
-            <div class="comment">
+            <div class="comment wow animate__backInRight">
               <div>We work with clients around the world from our headquarters in Charleston, South Carolina.
               </div>
               <div>We focus on naming, branding, brand narratives, website design and develodivment, and brand
@@ -220,12 +218,12 @@
     <footer>
       <div class="container">
         <div class="footer-wrap">
-          <div class="contacts">
+          <div class="contacts wow animate__backInLeft">
             <h5>Need a project?</h5>
             <p class="tel">(239) 555-0108</p>
             <p class="mail">tanya.hill@example.com</p>
           </div>
-          <ul class="soc-list">
+          <ul class="soc-list wow animate__backInRight">
             <li>
               <a href="#">
                 <svg width="20px" height="20px">
@@ -257,14 +255,31 @@
           </ul>
         </div>
       </div>
-      <div class="copyrihts">© Copyright Manifest Theme. Allrights reserved</div>
+      <div class="copyrihts wow animate__backInUp">© Copyright Manifest Theme. Allrights reserved</div>
     </footer>
   </div>
 
+  <script src="assets/plugins/wow.min.js"></script>
   <script>
-    const toggleMenu = () => { document.body.classList.toggle('open-menu') }
-  </script>
-</body>
 
+    wow = new WOW(
+      {
+        animateClass: 'animate__animated',
+      }
+    )
+    wow.init();
+
+    const toggleMenu = () => { document.body.classList.toggle('open-menu') }
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 970 && document.body.classList.contains('open-menu')) {
+        document.body.classList.remove('open-menu')
+      }
+    })
+  </script>
+
+  <script src="assets/plugins/lazyload.min.js"></script>
+  <script>const lazyLoadInstance = new LazyLoad();</script>
+</body>
 
 </html>

@@ -1,5 +1,5 @@
-@import 'fonts.css';
-@import 'hamburger';
+@use 'fonts.css' as *;
+@use 'hamburger.scss' as *;
 
 $text-color: #565656;
 $text-color-secondary: #7B7B7B;
@@ -48,6 +48,7 @@ body {
   line-height: 166%;
   letter-spacing: 0.05rem;
   color: $text-color;
+  min-width: 320px;
 }
 
 .overlay {
@@ -107,17 +108,6 @@ body {
         &:hover {
           cursor: pointer;
           color: $title-color;
-          // &::after {
-          //   content: "";
-          //   display: block;
-          //   width: 40px;
-          //   height: 1px;
-          //   background-color: $title-color;
-          //   left: 50%;
-          //   bottom: -5px;
-          //   transform: translateX(-50%);
-          //   position: absolute;
-          // }
         }
       }
     }
@@ -132,7 +122,6 @@ body {
   }
 
   .mob-menu {
-    // display: flex;
     transform: translateY(0);
 
   }
@@ -161,63 +150,78 @@ header {
       text-align: center;
     }
 
-    nav {
-      text-align: center;
-      margin-right: 100px;
+    .header-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 80px;
 
-      ul {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 42px;
+      nav {
+        text-align: center;
 
-        li {
-          text-align: center;
-          position: relative;
+        ul {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 42px;
 
-
-          a {
-            font-family: Lato;
-            font-size: 0.875rem;
-            font-weight: 400;
-            letter-spacing: 0.2625rem;
-            text-transform: uppercase;
-            color: $title-color;
+          li {
             text-align: center;
-            text-decoration: none;
             position: relative;
 
-            &:hover {
-              cursor: pointer;
 
-              &::after {
-                content: "";
-                display: block;
-                width: 40px;
-                height: 1px;
-                background-color: $title-color;
-                left: 50%;
-                bottom: -5px;
-                transform: translateX(-50%);
-                position: absolute;
+            a {
+              font-family: Lato;
+              font-size: 0.875rem;
+              font-weight: 400;
+              letter-spacing: 0.2625rem;
+              text-transform: uppercase;
+              color: $title-color;
+              text-align: center;
+              text-decoration: none;
+              position: relative;
+
+              &:hover {
+                cursor: pointer;
+
+                &::after {
+                  content: "";
+                  display: block;
+                  width: 40px;
+                  height: 1px;
+                  background-color: $title-color;
+                  left: 50%;
+                  bottom: -5px;
+                  transform: translateX(-50%);
+                  position: absolute;
+                }
               }
             }
           }
         }
+
       }
 
-    }
+      .mob-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
 
-    .search {
-      position: absolute;
-      top: 4px;
-      right: 0;
+        .search {
 
-      &:hover {
-        cursor: pointer;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
   }
+}
+
+.burger-wrap {
+  display: none;
 }
 
 .arrow-img {
@@ -251,7 +255,13 @@ h1 {
   line-height: 4rem;
   letter-spacing: 0.15rem;
   padding-top: 100px;
+
+  &:hover {
+    animation: headShake 1s ease-in-out;
+  }
 }
+
+
 
 h2 {
   font-family: "Red Hat Display";
@@ -535,44 +545,23 @@ footer {
 }
 
 // mobile navigation
-.mob-nav {
-  display: none;
-}
 
-@media screen and (max-width: 950px) {
+
+@media screen and (max-width: 970px) {
   header {
     height: 60px;
     padding: 18px 0;
-  }
 
-  nav {
-    display: none;
-  }
-
-  .search {
-    display: none;
-  }
-
-  .mob-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-
-    .mob-search {
-      position: absolute;
-      top: 3px;
-      left: -60px;
-
-      &:hover {
-        cursor: pointer;
+    .header-right {
+      nav {
+        display: none;
       }
     }
   }
 
-
-
+  .burger-wrap {
+    display: block;
+  }
 
   section {
 
@@ -673,6 +662,10 @@ footer {
 }
 
 @media screen and (max-width: 545px) {
+
+  header .container .header-right .mob-nav {
+    gap: 20px;
+  }
 
   section {
 
