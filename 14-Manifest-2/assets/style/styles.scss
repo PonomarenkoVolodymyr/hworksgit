@@ -247,7 +247,7 @@ footer {
     }
 
     .container {
-        max-width: calc(100% - 68px);
+        width: calc(100% - 68px);
     }
 
     section:not(:last-child) {
@@ -289,7 +289,7 @@ footer {
 
 @media screen and (max-width: 576px) {
     .container {
-        max-width: calc(100% - 20px);
+        width: calc(100% - 20px);
     }
 
     section {
