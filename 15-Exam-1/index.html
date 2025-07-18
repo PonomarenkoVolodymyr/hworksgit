@@ -37,16 +37,16 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
-            <div class="mob-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Use Cases</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Resources</a></li>
-                </ul>
+                <div class="mob-menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Use Cases</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
         <main>
@@ -103,52 +103,57 @@
             </section>
             <section id="benefits">
                 <div class="container">
-                    <div class="benefit-row">
-                        <div class="benefit-item">
-                            <hgroup>
-                                <h3 class="mb-30">Qualified <span>traders</span> and liquidty <span>solutions</span>
-                                </h3>
-                                <p>Trade easily and efficiently between 12 stablecoins, including USDT, TrueUSD, Dai,
-                                    Eurs
-                                    and
-                                    Gemini Dollar.</p>
-                            </hgroup>
+                    <div class="benefit-wrap">
+                        <div class="benefit-row">
+                            <div class="benefit-item">
+                                <hgroup>
+                                    <h3 class="mb-30">Qualified <span>traders</span> and liquidty <span>solutions</span>
+                                    </h3>
+                                    <p>Trade easily and efficiently between 12 stablecoins, including USDT, TrueUSD,
+                                        Dai,
+                                        Eurs
+                                        and
+                                        Gemini Dollar.</p>
+                                </hgroup>
+                            </div>
+                            <div class="benefit-item">
+                                <hgroup>
+                                    <h3 class="mb-30">Settlement/OTC API and <span>integration</span></h3>
+                                    <p>Integrate OTC operations and settlements using our efficient API.</p>
+                                </hgroup>
+                            </div>
                         </div>
-                        <div class="benefit-item">
-                            <hgroup>
-                                <h3>Settlement/OTC API and <span>integration</span></h3>
-                                <p>Integrate OTC operations and settlements using our efficient API.</p>
-                            </hgroup>
+                        <div class="benefit-row last-row">
+                            <div class="benefit-item">
+                                <hgroup class="mb-30">
+                                    <h3 class="mb-30">The best <span>payments solutions</span></h3>
+                                    <p>For all stablecoin payments, from point-of-sale transactions to website
+                                        solutions. If
+                                        you
+                                        use
+                                        stablecoins in your business, Stablehouse is for you.</p>
+                                </hgroup>
+                            </div>
+                            <div class="benefit-item">
+                                <hgroup>
+                                    <h3 class="mb-30"><span>Treasury</span> and <span>returns</span> for stablecoin
+                                        stores</h3>
+                                    <p>Automate your stablecoin store with instant payments and on-the-fly conversion
+                                        between
+                                        different stablecoins.</p>
+                                </hgroup>
+                            </div>
                         </div>
-                    </div>
-                    <div class="benefit-row last-row">
-                        <div class="benefit-item">
-                            <hgroup>
-                                <h3>The best <span>payments solutions</span></h3>
-                                <p>For all stablecoin payments, from point-of-sale transactions to website solutions. If
-                                    you
-                                    use
-                                    stablecoins in your business, Stablehouse is for you.</p>
-                            </hgroup>
+                        <div class="quote-wrap">
+                            <blockquote>
+                                <p>
+                                    Solis Group serves as a liquidity nexus that gives stablecoin issuers, holders and
+                                    exchanges
+                                    certainty over access and liquidity
+                                </p>
+                                <cite>Lennon Burnett, Solis Group CEO</cite>
+                            </blockquote>
                         </div>
-                        <div class="benefit-item">
-                            <hgroup>
-                                <h3><span>Treasury</span> and <span>returns</span> for stablecoin stores</h3>
-                                <p>Automate your stablecoin store with instant payments and on-the-fly conversion
-                                    between
-                                    different stablecoins.</p>
-                            </hgroup>
-                        </div>
-                    </div>
-                    <div class="quote-wrap">
-                        <blockquote>
-                            <p>
-                                Solis Group serves as a liquidity nexus that gives stablecoin issuers, holders and
-                                exchanges
-                                certainty over access and liquidity
-                            </p>
-                            <cite>Lennon Burnett, Solis Group CEO</cite>
-                        </blockquote>
                     </div>
                 </div>
             </section>
@@ -306,7 +311,7 @@
         const toggleMenu = () => { document.body.classList.toggle('open-menu') }
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth >= 970 && document.body.classList.contains('open-menu')) {
+            if (window.innerWidth >= 768 && document.body.classList.contains('open-menu')) {
                 document.body.classList.remove('open-menu')
             }
         })
