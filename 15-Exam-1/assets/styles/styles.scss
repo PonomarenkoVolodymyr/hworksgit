@@ -18,6 +18,14 @@ $primary-grey: #E4E4E4;
     margin-bottom: 20px;
 }
 
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mb-26 {
+    margin-bottom: 26px;
+}
+
 .mb-29 {
     margin-bottom: 29px;
 }
@@ -26,8 +34,8 @@ $primary-grey: #E4E4E4;
     margin-bottom: 30px;
 }
 
-.mb-50 {
-    margin-bottom: 50px;
+.mb-48 {
+    margin-bottom: 48px;
 }
 
 
@@ -72,10 +80,10 @@ body {
     font-weight: 300;
     line-height: 1.625rem;
     color: $text-color;
-
     background: url('../images/bg-pic.webp') left top / contain no-repeat;
-}
 
+    min-width: 320px;
+}
 
 .overlay {
     visibility: hidden;
@@ -356,12 +364,12 @@ h3 {
     &:hover {
         border-color: $btn-active-color;
 
+        & ::after {
+            background-color: lighten($btn-active-color, 30);
+        }
+
         span {
             color: $btn-active-color;
-
-            ::after {
-                background-color: lighten($btn-active-color, 30);
-            }
         }
     }
 }
@@ -438,7 +446,7 @@ h3 {
             width: 51.95%;
 
             .text-wrap {
-                margin-bottom: 50px;
+                margin-bottom: 47px;
 
                 p {
                     font-family: Lato;
@@ -449,7 +457,7 @@ h3 {
                 }
 
                 p+p {
-                    margin-top: 20px;
+                    margin-top: 31px;
                 }
             }
         }
@@ -463,19 +471,20 @@ h3 {
     margin-bottom: 60px;
 
     &.last-row {
-        margin-bottom: 120px;
+        margin-bottom: 66px;
     }
 }
 
 .benefit-item {
     width: 50%;
-    padding: 20px 30px;
+    padding: 49px 30px;
     border-top: 1px solid $primary-grey;
 }
 
 .quote-wrap {
-    padding: 100px 160px;
-    background: url("../images/abstract-arcitecture.webp");
+    padding: 104px 161px;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     blockquote {
         p {
@@ -521,7 +530,7 @@ h3 {
     .tablet {
         border: 1px solid $primary-grey;
         border-radius: 32px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         position: relative;
         width: 100%;
         aspect-ratio: 970 / 601;
@@ -625,20 +634,6 @@ h4 {
         width: 370px;
         aspect-ratio: 370 / 340;
 
-        &.bg-1 {
-            background: linear-gradient(rgba(25, 28, 41, 0.60)), url("../images/quotes/quote-small-1.webp") center / cover no-repeat;
-        }
-
-
-        &.bg-2 {
-            background: linear-gradient(rgba(25, 28, 41, 0.60)), url("../images/quotes/quote-small-2.webp") center / cover no-repeat;
-        }
-
-
-        &.bg-3 {
-            background: linear-gradient(rgba(25, 28, 41, 0.60)), url("../images/quotes/quote-small-3.webp") center / cover no-repeat;
-        }
-
 
         blockquote {
             display: flex;
@@ -667,7 +662,20 @@ h4 {
     }
 }
 
+#reviews {
+    margin-bottom: 99px;
+}
+
+.reviews-text {
+    max-width: 400px;
+}
+
+#contact {
+    margin-bottom: 107px;
+}
+
 .contact-wrap {
+    padding-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -678,10 +686,12 @@ h4 {
         width: 100%;
         max-width: 470px;
     }
-
-
 }
 
+
+.border-top {
+    border-top: 1px solid $primary-grey;
+}
 
 .field {
     max-width: 100%;
@@ -689,6 +699,10 @@ h4 {
     border-bottom: 1px solid $primary-grey;
     position: relative;
     margin-bottom: 40px;
+
+    &:focus-within {
+        border-bottom-color: $btn-color;
+    }
 
     input {
         font-family: "Playfair Display";
@@ -700,6 +714,7 @@ h4 {
         border: none;
         width: 100%;
         height: 95%;
+        padding-bottom: 5px;
 
         &:focus+label,
         &:not(:placeholder-shown)+label {
@@ -724,10 +739,7 @@ h4 {
         top: 50%;
         transform: translateY(-50%);
         transition: 0.2s;
-
     }
-
-
 }
 
 footer {
@@ -831,7 +843,7 @@ footer {
             position: static;
             transform: none;
             border: 1px solid $primary-grey;
-            padding: 20px;
+            padding: 35px;
             margin-top: 30px;
 
             .numbers {
@@ -1086,7 +1098,7 @@ footer {
 
 
 
-@media screen and (min-width:385px) and (max-width:490px) {
+@media screen and (min-width:400px) and (max-width:490px) {
     h1 {
         font-size: 2.4rem;
 
@@ -1130,9 +1142,13 @@ footer {
     .promises-wrap .features .features-col .features-item p {
         margin-bottom: 5px;
     }
+
+    .field input {
+        font-size: 1.3rem;
+    }
 }
 
-@media screen and (max-width:385px) {
+@media screen and (max-width:400px) {
 
     h1 {
         font-size: 2.2rem;
@@ -1172,6 +1188,16 @@ footer {
 
     .btn span {
         font-size: 1rem;
+    }
+
+    .btn-frame {
+        padding: 10px 20px;
+        width: 145px;
+        height: 55px;
+    }
+
+    .field input {
+        font-size: 1.2rem;
     }
 
 }

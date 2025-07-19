@@ -4,11 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="assets/styles/styles.min.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     <title>15-Exam-1</title>
 </head>
 
-<body>
+<body class="lazy" data-bg="assets/images/bg-pic.webp">
     <div class="overlay"></div>
 
     <div class="page-wrapper">
@@ -62,8 +69,9 @@
             <section id="info">
                 <div class="container">
                     <div class="info-wrap">
-                        <div class="info-pic">
-                            <img src="assets/images/megapolis.webp" alt="megapolis">
+                        <div class="info-pic wow animate__backInLeft">
+                            <img class="lazy" data-src="assets/images/megapolis.webp" src="assets/images/megapolis.webp"
+                                alt="megapolis">
                         </div>
                         <div class="info-stat">
                             <div class="numbers">
@@ -105,9 +113,9 @@
                 <div class="container">
                     <div class="benefit-wrap">
                         <div class="benefit-row">
-                            <div class="benefit-item">
+                            <div class="benefit-item wow animate__backInLeft">
                                 <hgroup>
-                                    <h3 class="mb-30">Qualified <span>traders</span> and liquidty <span>solutions</span>
+                                    <h3 class="mb-26">Qualified <span>traders</span> and liquidty <span>solutions</span>
                                     </h3>
                                     <p>Trade easily and efficiently between 12 stablecoins, including USDT, TrueUSD,
                                         Dai,
@@ -116,17 +124,17 @@
                                         Gemini Dollar.</p>
                                 </hgroup>
                             </div>
-                            <div class="benefit-item">
+                            <div class="benefit-item wow animate__backInRight">
                                 <hgroup>
-                                    <h3 class="mb-30">Settlement/OTC API and <span>integration</span></h3>
+                                    <h3 class="mb-26">Settlement/OTC API and <span>integration</span></h3>
                                     <p>Integrate OTC operations and settlements using our efficient API.</p>
                                 </hgroup>
                             </div>
                         </div>
                         <div class="benefit-row last-row">
-                            <div class="benefit-item">
+                            <div class="benefit-item wow animate__backInLeft">
                                 <hgroup class="mb-30">
-                                    <h3 class="mb-30">The best <span>payments solutions</span></h3>
+                                    <h3 class="mb-26">The best <span>payments solutions</span></h3>
                                     <p>For all stablecoin payments, from point-of-sale transactions to website
                                         solutions. If
                                         you
@@ -134,9 +142,9 @@
                                         stablecoins in your business, Stablehouse is for you.</p>
                                 </hgroup>
                             </div>
-                            <div class="benefit-item">
+                            <div class="benefit-item wow animate__backInRight">
                                 <hgroup>
-                                    <h3 class="mb-30"><span>Treasury</span> and <span>returns</span> for stablecoin
+                                    <h3 class="mb-26"><span>Treasury</span> and <span>returns</span> for stablecoin
                                         stores</h3>
                                     <p>Automate your stablecoin store with instant payments and on-the-fly conversion
                                         between
@@ -144,7 +152,7 @@
                                 </hgroup>
                             </div>
                         </div>
-                        <div class="quote-wrap">
+                        <div class="quote-wrap lazy wow animate__backInUp" data-bg="assets/images/quotes/quote-bg.webp">
                             <blockquote>
                                 <p>
                                     Solis Group serves as a liquidity nexus that gives stablecoin issuers, holders and
@@ -160,7 +168,7 @@
             <section id="video">
                 <div class="container">
                     <div class="video-wrap">
-                        <div class="tablet">
+                        <div class="tablet wow animate__zoomIn">
                             <div class="tablet-screen">
                                 <iframe src="https://www.youtube.com/embed/vnbN9V_2Guk?si=tjVeJ0XGIaooMYT0"
                                     title="YouTube video player"
@@ -169,7 +177,7 @@
                             </div>
                         </div>
                         <hgroup>
-                            <h3 class="mb-20">A <span>powerful API</span>, easy to use user interface</h3>
+                            <h3 class="mb-25">A <span>powerful API</span>, easy to use user interface</h3>
                             <p>Our API allows all members to interact with Stablehouse’s platform, from effecting
                                 transfers
                                 to deposits, withdrawals, creation and redemption and reporting.</p>
@@ -180,8 +188,9 @@
             <section id="promises">
                 <div class="container">
                     <div class="promises-wrap">
-                        <div class="promises-pic">
-                            <img src="assets/images/abstract-arcitecture.webp" alt="abstract arcitecture">
+                        <div class="promises-pic wow animate__backInLeft">
+                            <img class="lazy" data-src="assets/images/abstract-arcitecture.webp"
+                                src="assets/images/abstract-arcitecture.webp" alt="abstract arcitecture">
                         </div>
                         <div class="features">
                             <div class="features-col">
@@ -212,62 +221,68 @@
             </section>
             <section id="reviews">
                 <div class="container">
-                    <hgroup class="mb-50">
-                        <h3 class="mb-20">Client <span>reviews</span></h3>
-                        <p>Happy clients, happy us. Read our client reviews about the work process and results.</p>
-                    </hgroup>
-                    <div class="quotes-wrap">
-                        <div class="quotes-item bg-1">
-                            <blockquote>
-                                <p>
-                                    Solis did a great job. Whether providing direct development support or giving us
-                                    the
-                                    opportunity to make our development updates, Solis's web design expertise and
-                                    support
-                                    services were top notch! It didn't take long to stand up our website, and we
-                                    were
-                                    pleased with the design and layout of the graphics and information.
-                                </p>
-                                <cite>Dr. Jamika Burge</cite>
-                            </blockquote>
-                        </div>
-                        <div class="quotes-item bg-2">
-                            <blockquote>
-                                <p>Solis is a cutting edge company and knows the importance of excellence. Having been
-                                    in
-                                    business for 21 years, I know when I’ve found a competent professional and more
-                                    importantly a company with integrity. I highly recommend this company and am
-                                    available
-                                    for further reference if needed.</p>
-                                <cite>Evie-Rose Prosse</cite>
-                            </blockquote>
-                        </div>
-                        <div class="quotes-item bg-3">
-                            <blockquote>
-                                <p>I can’t say enough about how knowledgeable Toinette Rorie is in the area of Web
-                                    Development. She indeed is a developer and can build a site from scratch. She
-                                    understands functionality and is great at constructing a site that is robust and
-                                    fully
-                                    functioning. </p>
-                                <cite>Elvis Mooney</cite>
-                            </blockquote>
+                    <div class="rewviews-wrap">
+                        <hgroup class="reviews-text mb-48 wow animate__zoomIn">
+                            <h3 class="mb-20">Client <span>reviews</span></h3>
+                            <p>Happy clients, happy us. Read our client reviews about the work process and results.</p>
+                        </hgroup>
+                        <div class="quotes-wrap">
+                            <div class="quotes-item lazy wow animate__backInLeft"
+                                data-bg="assets/images/quotes/quote-small-1.webp">
+                                <blockquote>
+                                    <p>
+                                        Solis did a great job. Whether providing direct development support or giving us
+                                        the
+                                        opportunity to make our development updates, Solis's web design expertise and
+                                        support
+                                        services were top notch! It didn't take long to stand up our website, and we
+                                        were
+                                        pleased with the design and layout of the graphics and information.
+                                    </p>
+                                    <cite>Dr. Jamika Burge</cite>
+                                </blockquote>
+                            </div>
+                            <div class="quotes-item lazy wow animate__backInDown"
+                                data-bg="assets/images/quotes/quote-small-2.webp">
+                                <blockquote>
+                                    <p>Solis is a cutting edge company and knows the importance of excellence. Having
+                                        been
+                                        in
+                                        business for 21 years, I know when I’ve found a competent professional and more
+                                        importantly a company with integrity. I highly recommend this company and am
+                                        available
+                                        for further reference if needed.</p>
+                                    <cite>Evie-Rose Prosse</cite>
+                                </blockquote>
+                            </div>
+                            <div class="quotes-item lazy wow animate__backInRight"
+                                data-bg="assets/images/quotes/quote-small-3.webp">
+                                <blockquote>
+                                    <p>I can’t say enough about how knowledgeable Toinette Rorie is in the area of Web
+                                        Development. She indeed is a developer and can build a site from scratch. She
+                                        understands functionality and is great at constructing a site that is robust and
+                                        fully
+                                        functioning. </p>
+                                    <cite>Elvis Mooney</cite>
+                                </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="contact">
                 <div class="container">
-                    <div class="contact-wrap">
-                        <div class="contact-info">
-                            <hgroup>
+                    <div class="contact-wrap border-top">
+                        <div class="contact-info wow animate__backInLeft">
+                            <hgroup class="contact-text">
                                 <h3 class="mb-29">Contact <span>our sales team</span></h3>
                                 <p>Our team is happy to answer your sales questions.Fill out the form and we’ll be in
                                     touch
                                     as soon as possible.</p>
                             </hgroup>
                         </div>
-                        <div class="form-wrap">
-                            <form method="post" id="customer_info"
+                        <div class="form-wrap wow animate__backInRight">
+                            <form method="post" id="customer_info" name="customer_info"
                                 onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('customer_info')))).toString()));return false;">
                                 <div class="field">
                                     <input type="text" name="name" id="name" placeholder="" required>
@@ -288,7 +303,7 @@
                 </div>
             </section>
         </main>
-        <footer>
+        <footer class="wow animate__backInUp">
             <div class="container">
                 <div class="footer-wrap">
                     <div class="rihghts">© 2025 Solisgroup. All Rights Reserved.</div>
@@ -306,8 +321,15 @@
         </footer>
     </div>
 
-
+    <script src="assets/js/wow.min.js"></script>
     <script>
+        wow = new WOW(
+            {
+                animateClass: 'animate__animated',
+            }
+        )
+        wow.init();
+
         const toggleMenu = () => { document.body.classList.toggle('open-menu') }
 
         window.addEventListener('resize', function () {
@@ -316,6 +338,9 @@
             }
         })
     </script>
+    <script src="assets/js/lazyload.min.js"></script>
+    <script>const lazyLoadInstance = new LazyLoad();</script>
+
 </body>
 
 </html>
