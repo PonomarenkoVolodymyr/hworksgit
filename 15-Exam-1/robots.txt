@@ -1,0 +1,35 @@
+User-Agent:*
+Disallow:/
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: uptimerobot
+Disallow: /
+
+User-agent: viberbot
+Disallow: /
+
+User-agent: YaK
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
