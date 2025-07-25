@@ -21,7 +21,7 @@ function circleArea() {
 
 function speed() {
   const distance = prompt("Вкажіть відстань в кілометрах");
-  const time = prompt(`Вкажіть вкажіть час за який треба проїхати ${distance}км`);
+  const time = prompt(`Вкажіть вкажіть час (в годинах) за який треба проїхати ${distance}км`);
   const speed = distance/time;
   alert(`Мінімальна швидкість = ${speed} км/год`)    
 } 
