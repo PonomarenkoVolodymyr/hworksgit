@@ -6,17 +6,20 @@ function yourName() {
 
 function yourBirthYear() {
   const yourBirthYear = prompt("Вкажіть Ваш рік народження");
-  alert(`Цього року вам виповниться ${2025 - yourBirthYear} повних років!`)    
+  const age = 2025 - yourBirthYear;
+  alert(`Цього року вам виповниться ${age} повних років!`)    
 } 
 
 function squarePerimeter() {
   const length = prompt("Вкажіть довжину сторони квадрату в мм");
-  alert(`Периметр квадрату = ${length*4} мм`)    
+  const preimeter =length*4;
+  alert(`Периметр квадрату = ${preimeter} мм`)    
 } 
 
 function circleArea() {
-  const radius = prompt("Вкажіть радіус круга в мм");    
-  alert(`Площа кругу = ${Math.PI * radius ** 2} мм кв.`)    
+  const radius = prompt("Вкажіть радіус круга в мм");
+  const area = Math.PI * radius ** 2; 
+  alert(`Площа кругу = ${area} мм кв.`)    
 }
 
 function speed() {
