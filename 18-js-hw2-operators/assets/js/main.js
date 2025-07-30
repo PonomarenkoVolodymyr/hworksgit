@@ -16,7 +16,7 @@ function calc(){
 function rez2(){
     const num1 = "1";
     const num2 = 2;
-    const result2 = parseFloat(num1) + num2;
+    const result2 = +num1 + num2;
     document.getElementById("rez2").innerHTML = `Cума = ${result2}`
 }
 
