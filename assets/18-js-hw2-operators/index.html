@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <title>18 - JS - HW2 - OPERATORS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 1. Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.</h4>
+            </div>
+            <div class="card-body">
+                <label for="first-num">Введіть в поле 0.1</label>
+                <input id="first-num" type="text" class="form-control">
+                <label for="second-num">Введіть в поле 0.2</label>
+                <input id="second-num" type="text" class="form-control">
+                <a href="#" onclick="calc()" class="btn btn-primary">Додати</a>
+
+            </div>
+            <div class="card-footer">
+                <output id="rez"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 2. Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в змінних), добийся
+                    математично правильної відповіді.</h4>
+            </div>
+            <div class="card-body">
+                <p>Натисніть кнопку</p>
+                <a href="#" onclick="rez2()" class="btn btn-primary">Показати відповідь</a>
+            </div>
+            <div class="card-footer">
+                <output id="rez2"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 3. Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки файлів розміром в
+                    820 Мб поміщається на флешку.</h4>
+            </div>
+            <div class="card-body">
+                <label for="flash-volume">Введіть обсяг вашої флешки в Гб(гігабайтах)</label>
+                <input id="flash-volume" type="text" class="form-control">
+                <a href="#" onclick="filesAmount()" class="btn btn-primary">Розрахувати</a>
+            </div>
+            <div class="card-footer">
+                <output id="rez3"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 4. Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма виводить скільки
+                    шоколадок може купити користувач і скільки здачі у нього залишиться.</h4>
+            </div>
+            <div class="card-body">
+                <label for="cash">Введіть сумму</label>
+                <input id="cash" type="text" class="form-control">
+                <label for="choco-price">Введіть ціну шоколадки</label>
+                <input id="choco-price" type="text" class="form-control">
+                <button onclick="chocoAmount()" class="btn btn-primary">Розрахувати</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez4"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 5. Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання
+                    тобі знадобиться оператор % (залишок від ділення).</h4>
+            </div>
+            <div class="card-body">
+                <label for="num3digt">Введіть Тризначне число</label>
+                <input id="num3digt" type="text" class="form-control">
+                <button onclick="reverseNum()" class="btn btn-primary">Перетворити</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez5"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 6. Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою депозиту 5% річних.
+                    Вивести суму нарахованих відсотків.</h4>
+            </div>
+            <div class="card-body">
+                <label for="dep-value">Введіть суму вкладу</label>
+                <input id="dep-value" type="text" class="form-control">
+                <button onclick="deposit()" class="btn btn-primary">Розрахувати</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez6"></output>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
