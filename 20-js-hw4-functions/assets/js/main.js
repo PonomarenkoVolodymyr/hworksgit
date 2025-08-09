@@ -15,7 +15,7 @@ const myFn3 =  ()=>{
 function argSum(){
     console.log(arguments.length)
 }
-argSum('a', 2, true ) // 3
+/* argSum('a', 2, true ) // 3  */
 
 //Task 3.Напиши функцію, яка приймає 2 числа і повертає :
 //-1, якщо перше число менше, ніж друге; 
@@ -116,9 +116,11 @@ const isPerfect = (num6)=>{
 
    if( num6 === sum) {
         document.getElementById("rez5").innerHTML = `Число ${num6} - "досконале число"`
+        return true // для Task 8
     } else {
         document.getElementById("rez5").innerHTML = `Число ${num6} - "Недосконале число"`
-   }      
+        return false // для Task 8
+   } 
 }
 
 
@@ -127,16 +129,26 @@ const isPerfect = (num6)=>{
 //Task 8.Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
 
 const perfectNums = ()=>{
-    const num7 = +(document.getElementById("num7").value);
-    const num8 = +(documen.getElementById("num8").value);
-
-    if( isNaN(num7) || num7< 0 || isNaN(num8) || num8 < 0){
-        document.getElementById("rez6").innerHTML = `<span style="color:red">Введіть ціле додатнє число</span>`
-        return;
-    }
+    const num7 = document.getElementById("num7").valueAsNumber;
+    const num8 = document.getElementById("num8").valueAsNumber;
     const rezArr=[]
 
+    if( isNaN(num7) || num7 < 0 || isNaN(num8) || num8 < 0){
+        document.getElementById("rez6").innerHTML = `<span style="color:red">Введіть ціле додатнє число</span>`;
+        return;
+    }
+
     for ( let j = num7; j < num8; j++ ){
-        isPerfect(j)
-    }    
+       if( isPerfect(j)) {
+        rezArr.push(j)
+       }
+    }
+
+    if (rezArr.length > 0) {
+        document.getElementById("rez6").innerText = `В вашому діапазоні "досконалі числа": ${rezArr.join(', ')}`
+    } else {
+         document.getElementById("rez6").innerText = 'В вашому діапазоні немає "досконалих чисел"'
+    }
+
+
 }
