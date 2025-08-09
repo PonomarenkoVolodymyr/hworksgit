@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <title>19 - JS - HW3 - LOOPS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 3.Напиши функцію, яка приймає 2 числа і повертає : <br>
+                    -1, якщо перше число менше, ніж друге;<br>
+                    1 - якщо перше число більше, ніж друге;<br>
+                    0 - якщо числа рівні.</h4>
+            </div>
+            <div class="card-body">
+                <label for="num1">Введіть перше число:</label>
+                <input id="num1" type="text" class="form-control">
+                <label for="num2">Введіть друге число:</label>
+                <input id="num2" type="text" class="form-control">
+                <button onclick="task3()" class="btn btn-primary">Показати результат</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 4.Напиши функцію, яка обчислює факторіал переданого їй числа.</h4>
+            </div>
+            <div class="card-body">
+                <label for="numF">Введіть перше число:</label>
+                <input id="numF" type="text" class="form-control">
+
+                <button onclick="findF()" class="btn btn-primary">Показати результат</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez2"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 5.Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри
+                    1, 4, 9 перетворяться в число 149.</h4>
+            </div>
+            <div class="card-body">
+                <label for="num3">Введіть перше число:</label>
+                <input id="num3" 4type="text" class="form-control">
+                <label for="num4">Введіть перше число:</label>
+                <input id="num4" type="text" class="form-control">
+                <label for="num5">Введіть перше число:</label>
+                <input id="num5" type="text" class="form-control">
+
+                <button onclick="convertNum()" class="btn btn-primary">Показати результат</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez3"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 6.Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в
+                    функцію передали 1 параметр, то вона обчислює площу квадрата.</h4>
+            </div>
+            <div class="card-body">
+                <label for="length">Введіть довжину:</label>
+                <input id="length" 4type="text" class="form-control">
+                <label for="width">Введіть ширину</label>
+                <input id="width" type="text" class="form-control">
+                <button onclick="area()" class="btn btn-primary">Показати результат</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez4"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 7.Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число -
+                    це число, яке дорівнює сумі всіх своїх дільників.</h4>
+            </div>
+            <div class="card-body">
+                <label for="num6">Введіть число:</label>
+                <input id="num6" 4type="text" class="form-control">
+                <button onclick="isPerfect()" class="btn btn-primary">Перевірити чи є "досконалим"</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez5"></output>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 7.Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число -
+                    це число, яке дорівнює сумі всіх своїх дільників.</h4>
+            </div>
+            <div class="card-body">
+                <label for="num7">Введіть перше число діапазону:</label>
+                <input id="num7" 4type="text" class="form-control">
+                <label for="num8">Введіть друге число діапазону:</label>
+                <input id="num8" 4type="text" class="form-control">
+                <button onclick="perfectNums()" class="btn btn-primary">Перевірити чи є "досконалим"</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez6"></output>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
