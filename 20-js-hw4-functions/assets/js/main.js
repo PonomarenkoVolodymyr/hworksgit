@@ -149,6 +149,4 @@ const perfectNums = ()=>{
     } else {
          document.getElementById("rez6").innerText = 'В вашому діапазоні немає "досконалих чисел"'
     }
-
-
 }
