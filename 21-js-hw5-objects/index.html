@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <title>12 - JS - HW4 - Objects</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 1. Створи об'єкт, що описує автомобіль</h4>
+            </div>
+            <div class="card-body">
+                <button onclick="car.showInfo()" class="btn btn-primary">Вивести інформацію про автомобіль</button>
+                <label for="diverName">Введіть і'я водія</label>
+                <input id="diverName" type="text" class="form-control">
+                <button onclick="car.addDriver()" class="btn btn-primary">Змінити і'мя водія</button>
+                <button onclick="car.isDriver()" class="btn btn-primary"> Перевірити і'мя водія</button>
+                <label for="distance">Порахувати час подорожі та розхід палива. Введіть відстань в км:</label>
+                <input id="distance" type="text" class="form-control">
+                <button onclick="car.roadCalc()" class="btn btn-primary">Порахувати час та кліькість палива в
+                    літрах</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez"></output>
+                <br>
+                <output id="rez2"></output>
+                <br>
+                <output id="rez3"></output>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
