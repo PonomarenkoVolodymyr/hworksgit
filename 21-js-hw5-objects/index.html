@@ -35,9 +35,31 @@
                 <output id="rez3"></output>
             </div>
         </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 2. Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим
+                    об'єктом:</h4>
+            </div>
+            <div class="card-body">
+                <button onclick="showTime()" class="btn btn-primary">Вивести час</button>
+                <label for="hours">Введіть години</label>
+                <input id="hours" type="text" class="form-control">
+                <button onclick="addHour()" class="btn btn-primary">Додати години</button>
+                <button onclick="minusHour()" class="btn btn-primary"> Відняти години</button>
+                <label for="min">Введіть хвилини</label>
+                <input id="min" type="text" class="form-control">
+                <button onclick="addMins()" class="btn btn-primary">Додати хвилини</button>
+                <button onclick="minusMins()" class="btn btn-primary"> Відняти хвилини</button>
+                <label for="sec">Введіть секунди</label>
+                <input id="sec" type="text" class="form-control">
+                <button onclick="addSec()" class="btn btn-primary">Додати секунди</button>
+                <button onclick="minusSec()" class="btn btn-primary"> Відняти секунди</button>
+            </div>
+            <div class="card-footer">
+                <output id="rez4"></output>
 
-
-
+            </div>
+        </div>
     </div>
     </div>
     <script src="assets/js/main.js"></script>
