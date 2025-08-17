@@ -137,10 +137,14 @@ function showTime(){
 }
 
 function changeTime(delta){
-    time2sec(time)
-    timeInSec += delta
-    sec2time(timeInSec)
-    showTime()
+    if (isNaN(delta)){
+        rez4.innerHTML = `<span style="color:red">Введіть ціле числове значення</span>`
+    }  else {
+        time2sec(time)
+        timeInSec += delta
+        sec2time(timeInSec)
+        showTime()
+    }
 }
     
 function addHour(){
