@@ -60,6 +60,60 @@
 
             </div>
         </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 3. Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="drib-wrap">
+                    <div class="drib">
+                        <p>Перший дріб:</p>
+                        <div class="item-wrapper">
+                            <div class="chsl1">
+                                <input id="chsl1" type="text" class="form-control num">
+                            </div>
+                            <input id="znam1" type="text" class="form-control num">
+                        </div>
+                    </div>
+                    <div class="drib">
+                        <p>Оператор (+, -, * / ):</p>
+                        <div class="item-wrapper">
+                            <input id="operator" type="text" class="form-control num">
+                        </div>
+                    </div>
+                    <div class="drib">
+                        <p>Другий дріб:</p>
+                        <div class="item-wrapper">
+                            <div class="chsl2">
+                                <input id="chsl2" type="text" class="form-control num">
+                            </div>
+                            <input id="znam2" type="text" class="form-control num">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="item-wrapper">
+                            <p class="equal">=</p>
+                        </div>
+                    </div>
+                    <div class="drib">
+                        <p>Відповідь:</p>
+                        <div class="item-wrapper">
+                            <div class="num-rez" id="rezChsl"></div>
+                            <div class="num-rez" id="rezZnam"></div>
+                        </div>
+                    </div>
+                    <div class="item-wrapper ">
+                        <button onclick="calcDrib()" class="btn btn-primary rez-btn">Показати відповідь</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <output id="rez5"></output>
+
+            </div>
+        </div>
+    </div>
     </div>
     </div>
     <script src="assets/js/main.js"></script>

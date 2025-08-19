@@ -118,8 +118,9 @@ let timeInSec = 0
 const rez4 = document.getElementById("rez4")
 
 
-const min = +document.getElementById("mins").value
-const sec = +document.getElementById("sec").value
+// const hours = +document.getElementById("hours").value
+// const min = +document.getElementById("mins").value
+// const sec = +document.getElementById("sec").value
  
 function time2sec (time) {
      timeInSec = time.h*3600 + time.m*60 + time.s
@@ -182,9 +183,116 @@ function minusSec(){
        changeTime(-sec)
 }
       
+/*Task 3.Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
+Складання 2-х об'єктів-дробів.
+Віднімання 2-х об'єктів-дробів.
+Множення 2-х об'єктів-дробів.
+Ділення 2-х об'єктів-дробів.
+Скорочення об'єкта-дробу.
+(Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)*/
 
+const fract1 = {
+    chsl: "",
+    znam: ""
+}
+const fract2 = {
+    chsl: "",
+    znam: ""
+}
 
+const rezFract = {
+    chsl: 0,
+    znam: 0    
+}
 
+function multiplyDrib (chsl1, znam1, chsl2, znam2){
+    rezFract.chsl = chsl1 * chsl2
+    rezFract.znam = znam1 * znam2
+}
 
+function devideDrib (chsl1, znam1, chsl2, znam2){
+    rezFract.chsl = chsl1 * znam2
+    rezFract.znam = znam1 * chsl2
+}
 
+function addDrib (chsl1, znam1, chsl2, znam2){
+    rezFract.chsl = (chsl1 * znam2) + (chsl2 * znam1)
+    rezFract.znam = znam1 * znam2
+    
+}
 
+function minusDrib (chsl1, znam1, chsl2, znam2){
+    rezFract.chsl = (chsl1 * znam2) - (chsl2 * znam1)
+    rezFract.znam = znam1 * znam2
+}
+
+function divider(rezChsl, rezZnam) {
+    let a = rezChsl,
+        b = rezZnam;
+    
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    } 
+
+    rezFract.chsl = rezChsl / a
+    rezFract.znam = rezZnam / a
+}
+
+function calcDrib(){
+    const
+        userOperator = document.getElementById("operator").value,
+        rezEl = document.getElementById("rez5"),
+        chsl1Val = +document.getElementById("chsl1").value, // числівник
+        znam1Val = +document.getElementById("znam1").value, // знаменник
+        chsl2Val = +document.getElementById("chsl2").value, // числівник
+        znam2Val = +document.getElementById("znam2").value // знаменник
+    
+    if (!chsl1Val || !znam1Val || !chsl2Val || !znam2Val) {
+        rezEl.innerHTML = `<span style="color:red">Введіть числові значення для дробів!</span>`;
+        return;
+    }
+    if (chsl1Val < 0 || znam1Val <= 0 || chsl2Val< 0 || znam2Val <= 0) {
+        rezEl.innerHTML = `<span style="color:red">Введіть додатні числа, знаменник не може бути нулем!</span>`;
+        return;
+    }
+
+    fract1.chsl = chsl1Val
+    fract1.znam = znam1Val
+    fract2.chsl = chsl2Val
+    fract2.znam = znam2Val    
+        
+    if (userOperator !== "*" && userOperator !== "/" && userOperator !== "-" && userOperator !== "+") {
+        rezEl.innerHTML = `<span style="color:red">Введіть * для множення, / для ділення, - для віднімання або + для додавання</span>`;
+      } else {
+        rezEl.innerHTML = ""
+    }  
+
+    switch (userOperator){
+        case "*":
+            multiplyDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            divider(rezFract.chsl, rezFract.znam)
+            break;
+        case "/":
+            devideDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            divider(rezFract.chsl, rezFract.znam)
+
+            break;
+        case "+":
+            addDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            divider(rezFract.chsl, rezFract.znam)
+            
+            break;
+        case "-":
+            minusDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            divider(rezFract.chsl, rezFract.znam)
+            break;
+        default:
+            rezEl.innerHTML = `<span style="color:red">Введіть * для множення, / для ділення, - для віднімання або + для додавання</span>`;
+            return;         
+    }
+    
+    document.getElementById('rezChsl').innerText = rezFract.chsl
+    document.getElementById('rezZnam').innerText = rezFract.znam
+}
