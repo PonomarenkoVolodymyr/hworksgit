@@ -92,21 +92,21 @@ function sum(){
 //Task 4. Запитай у користувача 2 числа і знайдинайбільший спільний дільник.
 
 const divider =  ()=> {
-    let num3 = +(document.getElementById("num3").value);
-    let num4 = +(document.getElementById("num4").value);
-    let commonD = 0;
+    const num3 = +(document.getElementById("num3").value);
+    const num4 = +(document.getElementById("num4").value);    
     if( isNaN(num3) || isNaN(num4)){
         document.getElementById("rez4").innerHTML = `<span style="color:red">Введіть коректне цифрове значення</span>`
     }
 
-    for( let i = 1; i <= Math.min( num3, num4); i++){
-        if (num3 % i === 0 &&  num4 % i === 0){
-            commonD = i
-        }
-        }
-    
-    document.getElementById("rez4").innerHTML = `Найбільший спільний дільник = ${commonD}`
+    let a = num3, b = num4;
 
+    while (b !==0){
+        const temp = b
+        b = a % b;
+        a = temp
+    }
+       
+    document.getElementById("rez4").innerHTML = `Найбільший спільний дільник = ${a}`
 }
 
 //Task 5. Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.
