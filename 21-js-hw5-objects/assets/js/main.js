@@ -205,12 +205,20 @@ const rezFract = {
     znam: 0    
 }
 
+const drib = {
+    mult: multiplyDrib,
+    divide: divideDrib,
+    plus: addDrib,
+    minus: minusDrib,
+    nod: dividerNOD
+}
+
 function multiplyDrib (chsl1, znam1, chsl2, znam2){
     rezFract.chsl = chsl1 * chsl2
     rezFract.znam = znam1 * znam2
 }
 
-function devideDrib (chsl1, znam1, chsl2, znam2){
+function divideDrib (chsl1, znam1, chsl2, znam2){
     rezFract.chsl = chsl1 * znam2
     rezFract.znam = znam1 * chsl2
 }
@@ -226,7 +234,7 @@ function minusDrib (chsl1, znam1, chsl2, znam2){
     rezFract.znam = znam1 * znam2
 }
 
-function divider(rezChsl, rezZnam) {
+function dividerNOD(rezChsl, rezZnam) {
     let a = rezChsl,
         b = rezZnam;
     
@@ -271,22 +279,22 @@ function calcDrib(){
 
     switch (userOperator){
         case "*":
-            multiplyDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
-            divider(rezFract.chsl, rezFract.znam)
+            drib.mult(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            drib.nod(rezFract.chsl, rezFract.znam)
             break;
         case "/":
-            devideDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
-            divider(rezFract.chsl, rezFract.znam)
+            drib.divide(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            drib.nod(rezFract.chsl, rezFract.znam)
 
             break;
         case "+":
-            addDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
-            divider(rezFract.chsl, rezFract.znam)
+            drib.plus(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            drib.nod(rezFract.chsl, rezFract.znam)
             
             break;
         case "-":
-            minusDrib(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
-            divider(rezFract.chsl, rezFract.znam)
+            drib.minus(fract1.chsl, fract1.znam, fract2.chsl, fract2.znam)
+            drib.nod(rezFract.chsl, rezFract.znam)
             break;
         default:
             rezEl.innerHTML = `<span style="color:red">Введіть * для множення, / для ділення, - для віднімання або + для додавання</span>`;
