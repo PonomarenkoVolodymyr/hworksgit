@@ -4,6 +4,10 @@
 3)Перевірка водія на наявність його ім’я у списку
 4)Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину. 
 */
+const el = (id)=>{
+    return document.getElementById(id)
+}
+
 const car = {
     brand: 'Mercedes-Benz',
     model: 'GLE',
@@ -26,76 +30,126 @@ const car = {
     },
     driver: 'Volodymyr',
 
-    showInfo,
-    addDriver,
-    isDriver,
-    roadCalc
-}
+    info: function(){
+        let html = ""
+        html += "<ul>"
+        for (let key in this){
+            if ( typeof this[key] === "string" || typeof this[key] === "number"){
+            html += `<li> ${key}:  <b>${this[key]}</b></li>`        
+            }
 
-const el = (id)=>{
-    return document.getElementById(id)
-}
+            if(key === "options"){
+                html += "<h5>Options:</h5>"
+                for( let optKey in this.options) {
+                    html += `<li> ${optKey}:  <b>${(this.options[optKey]  === true)? "+" : "-"}</b></li>` 
+                };
+            }
+        }    
+        html += "</ul>"    
+        el("rez").innerHTML = html
+    },    
 
-function showInfo(){
-    let html = ""
-    html += "<ul>"
-    for (let key in car){
-        if ( typeof car[key] === "string" || typeof car[key] === "number"){
-         html += `<li> ${key}: ${car[key]}</li>`        
+    addDriver: function (){
+        let  diverName = el("diverName").value
+        if (!diverName){
+            el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
+            return
+        } else { this.driver = diverName  }      
+    },
+
+    isDriver: function (){
+        let  diverName = el("diverName").value
+        if (!diverName){
+            el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
+            return
         }
-        if(key === "options"){
-            html += "<h5>Options:</h5>"
-             for( let optKey in car.options) {
-                html += `<li> ${optKey}:   ${(car.options[optKey] === true)? "+" : "-"}</li>`            
-            };
-     }
-    }
+        if (this.driver === diverName){             
+         el("rez2").innerHTML = `Так, водій ${diverName}`
+        } else { el("rez2").innerHTML = `Ні, водій не ${diverName}`}
+     },  
     
-    html += "</ul>"
     
-    el("rez").innerHTML = html
-}
-
-
-function isDriver(){
-    let  diverName = el("diverName").value
-    if (!diverName){
-        el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
-        return
-    }
-    if (car.driver === diverName){             
-     el("rez2").innerHTML = `Так, водій ${diverName}`
-    } else { el("rez2").innerHTML = `Ні, водій не ${diverName}`}
- }
-
-
-function addDriver(){
-    let  diverName = el("diverName").value
-    if (!diverName){
-        el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
-        return
-    } else { car.driver = diverName  }      
-}
-
-function roadCalc(){    
-    const distance = el("distance").value
-    if( isNaN(distance) || distance === "" ){
-        el("rez3").innerHTML = `<span style="color:red">Введіть числове значення відстані в км</span>`
-    } else {
-        let time = distance / car.avgSpeed
-        const stops = Math.trunc(time / 4)
-        let rezTime = 0
-        if( stops % 4 === 0 && stops > 0){
-             rezTime = time + stops - 1
-            } else {rezTime = time + stops}
-
-        const fuel = distance / 100 * car.fuelConsumption
-
-        rezTime < 1 
-            ? el("rez3").innerHTML = `На дорогу знадобиться ${(rezTime * 60).toFixed(0)} хвилин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
-            : el("rez3").innerHTML = `На дорогу знадобиться ${rezTime.toFixed(2)} годин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
+   
+    roadCalc: function (){    
+        const distance = el("distance").value
+        if( isNaN(distance) || distance === "" ){
+            el("rez3").innerHTML = `<span style="color:red">Введіть числове значення відстані в км</span>`
+        } else {
+            let time = distance / this.avgSpeed
+            const stops = Math.trunc(time / 4)
+            let rezTime = 0
+            if( stops % 4 === 0 && stops > 0){
+                 rezTime = time + stops - 1
+                } else {rezTime = time + stops}
+    
+            const fuel = distance / 100 * this.fuelConsumption
+    
+            rezTime < 1 
+                ? el("rez3").innerHTML = `На дорогу знадобиться ${(rezTime * 60).toFixed(0)} хвилин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
+                : el("rez3").innerHTML = `На дорогу знадобиться ${rezTime.toFixed(2)} годин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
+        }
     }
 }
+// function showInfo(){
+//     let html = ""
+//     html += "<ul>"
+//     for (let key in car){
+//         if ( typeof car[key] === "string" || typeof car[key] === "number"){
+//          html += `<li> ${key}: ${car[key]}</li>`        
+//         }
+//         if(key === "options"){
+//             html += "<h5>Options:</h5>"
+//              for( let optKey in car.options) {
+//                 html += `<li> ${optKey}:   ${(car.options[optKey] === true)? "+" : "-"}</li>`            
+//             };
+//      }
+//     }
+    
+//     html += "</ul>"
+    
+//     el("rez").innerHTML = html
+// }
+
+
+// function isDriver(){
+//     let  diverName = el("diverName").value
+//     if (!diverName){
+//         el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
+//         return
+//     }
+//     if (car.driver === diverName){             
+//      el("rez2").innerHTML = `Так, водій ${diverName}`
+//     } else { el("rez2").innerHTML = `Ні, водій не ${diverName}`}
+//  }
+
+
+// function addDriver(){
+//     let  diverName = el("diverName").value
+//     if (!diverName){
+//         el("rez2").innerHTML = `<span style="color:red">Введіть ім'я водія</span>`
+//         return
+//     } else { car.driver = diverName  }      
+// }
+
+// function roadCalc(){    
+//     const distance = el("distance").value
+//     if( isNaN(distance) || distance === "" ){
+//         el("rez3").innerHTML = `<span style="color:red">Введіть числове значення відстані в км</span>`
+//     } else {
+//         let time = distance / car.avgSpeed
+//         const stops = Math.trunc(time / 4)
+//         let rezTime = 0
+//         if( stops % 4 === 0 && stops > 0){
+//              rezTime = time + stops - 1
+//             } else {rezTime = time + stops}
+
+//         const fuel = distance / 100 * car.fuelConsumption
+
+//         rezTime < 1 
+//             ? el("rez3").innerHTML = `На дорогу знадобиться ${(rezTime * 60).toFixed(0)} хвилин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
+//             : el("rez3").innerHTML = `На дорогу знадобиться ${rezTime.toFixed(2)} годин(и) та ${fuel.toFixed(1)} літри(ів) палива. Ви зробите ${stops} зупинки(ок)`
+//     }
+// }
 
 /*Task 2. Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:
 Для виведення часу на екран.
