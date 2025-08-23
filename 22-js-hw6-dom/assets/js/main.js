@@ -200,12 +200,11 @@ const card3 = document.createElement("div")
         "0 0 25px rgb(37, 236, 57)"
     ]
 
-    const allLights = document.getElementsByClassName("light")
-    console.log(allLights);
+    const allLights = document.getElementsByClassName("light")    
     
     let activeLight = 0
 
-     function swichLight(){
+    function swichLight(){
         activeLight += 1
         if (activeLight > 2) {
             activeLight = 0
