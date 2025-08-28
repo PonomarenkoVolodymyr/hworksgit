@@ -65,145 +65,48 @@ a {
     font-size: 1.2rem;
 }
 
-output {
-    font-size: 1.2rem;
+.text {
+    font-size: 1.4rem;
 }
 
-.drib-wrap {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 30px;
-
-
-    .drib {
-
-        .item-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            min-height: 135px;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        .num,
-        .num-rez {
-            width: 60px;
-            height: 60px;
-            padding: 5px;
-            font-size: 2rem;
-            text-align: center;
-            display: block;
-
-        }
-    }
-}
-
-.equal {
-    font-size: 3rem;
-    margin-top: 62px;
-}
-
-.rez-btn {
-    margin-top: 80px;
-}
-
-.chsl1,
-.chsl2 {
-    position: relative;
-
-    &::after {
-        position: absolute;
-        content: "";
-        height: 2px;
-        width: 90%;
-        background-color: #2F281E;
-        left: -5px;
-        bottom: 4px;
-    }
-}
-
-
-#rezChsl {
-    position: relative;
-
-
-    &::after {
-        position: absolute;
-        content: "";
-        height: 2px;
-        width: 50px;
-        background-color: #2F281E;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        z-index: 10;
-    }
-}
-
-.overlay {
+#text-area {
     width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #2F281E;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 100;
-
-
-    &.active {
-        opacity: 0.7;
-        visibility: visible;
-
-    }
+    height: 50px;
+    padding: 10px;
 }
 
-.modal-window {
-    width: 40%;
-    height: 40%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+span {
+    display: inline-block;
+}
 
+#arrow {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    text-align: left;
+}
 
-    padding: 20px;
+th {
+    width: 25%;
 
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid #000;
+    .asc {
 
-    opacity: 0;
-    visibility: hidden;
-    z-index: 200;
+        color: #717171;
+        font-size: 0.7rem;
+        margin-left: 7px;
+        display: inline-block;
+        line-height: 1.2;
 
-    transition: opacity 0.3s ease;
+        &.rotated {
+            rotate: 180deg;
 
-
-
-    &.active {
-        opacity: 1;
-        visibility: visible;
-
+        }
     }
 
-    h4 {
-        font-size: 3rem;
-        color: #2F281E;
-        margin-top: 40px;
-        margin-bottom: 60px;
-        text-align: center;
-        margin-top: 10px;
-        opacity: 1;
+}
 
-    }
+.filter:hover {
+    cursor: pointer;
 }

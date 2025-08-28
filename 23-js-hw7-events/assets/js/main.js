@@ -1,223 +1,169 @@
-/* Task1. Створити нумерований список пісень.*/
+/*Task 1. Створити HTML-сторінку для відображення/редагування тексту При відкритті сторінки текст відображається за допомогою тега div. При натисканні Ctrl + E, замість div з'являється textarea з тим же текстом, який тепер можна редагувати. При натисканні Ctrl + S, замість textarea з'являється div з уже зміненим текстом. Не забудь вимкнути поведінку за замовчуванням для цих поєднань клавіш.*/
 
-const playList = [
-    {
-     author: "LED ZEPPELIN",
-     song:"STAIRWAY TO HEAVEN"
-    },
-    {
-     author: "QUEEN",
-     song:"BOHEMIAN RHAPSODY"
-    },
-    {
-     author: "LYNYRD SKYNYRD",
-     song:"FREE BIRD"
-    },
-    {
-     author: "DEEP PURPLE",
-     song:"SMOKE ON THE WATER"
-    },
-    {
-     author: "JIMI HENDRIX",
-     song:"ALL ALONG THE WATCHTOWER"
-    },
-    {
-     author: "AC/DC",
-     song:"BACK IN BLACK"
-    },
-    {
-     author: "QUEEN",
-     song:"WE WILL ROCK YOU"
-    },
-    {
-     author: "METALLICA",
-     song:"ENTER SANDMAN"
-    }
-    ];
+function el (id){
+    return document.getElementById(id)
+}
+
+document.addEventListener('keydown', (e)=>{
     
-    //створюємо контейнер:
-
-    const container = document.createElement("div")
-    container.classList.add("container")
-    document.body.prepend(container)
-
-    // створюємо елемент картки та наповнюємо структуру картки:
-
-    const card1 = document.createElement("div")
-    card1.classList.add("card")
-    container.prepend(card1)
-
-    const cardTitle1 = document.createElement("div")
-    cardTitle1.classList.add("card-header")
-    cardTitle1.setAttribute("id", "card-title1")
-    card1.prepend(cardTitle1)
-
-    const h4 = document.createElement("h4")
-    h4.textContent = "Task 1. Створити сторінку, що показує нумерований список пісень:"
-    cardTitle1.prepend(h4)
-
-    const cardBody1 = document.createElement("div")
-    cardBody1.classList.add("card-body")
-    cardBody1.setAttribute("id", "card-body1")
-    card1.append(cardBody1)
-
-    const btn1 = document.createElement("button")
-    btn1.classList.add("btn", "btn-primary")    
-    btn1.setAttribute("onclick", "showSongs()")
-    btn1.textContent = "Показати список пісень"
-    cardBody1.prepend(btn1)
-
-    const cardFooter1 = document.createElement("div")
-    cardFooter1.classList.add("card-footer")
-    card1.append(cardFooter1)
-
-
-    function showSongs(){
-       const ol = document.createElement("ol")
-       cardFooter1.prepend(ol)
-        playList.forEach(  (song)=>{
-            const li = document.createElement("li")
-            li.textContent = `${song.author} - ${song.song}`
-            ol.append(li)
-        })
+    if (e.ctrlKey && e.code === 'KeyE'){        
+        e.preventDefault()
+        const divText =  el("text")
+        const textArea = document.createElement('textarea')
+        textArea.id = "text-area"
+        textArea.textContent = "Enter new text"      
+        // divText.replaceWith(textArea)
+        divText.remove()
+        el("card-body").prepend(textArea)
+        textArea.focus()
+        textArea.select()
     }
 
-/*Task 2. Створити HTML-сторінку з кнопкою "Відкрити" і модальним вікном. На модальном вікні повинен бути текст і кнопка "Закрити". Спочатку модальне вікно не відображається. При кліку на кнопку "Відкрити" з'являється модальне вікно, на кнопку "Закрити" — зникає.*/
+    if(e.ctrlKey && e.code === 'KeyS'){
+        e.preventDefault()
+        const textArea = el('text-area')
+        const newText = textArea.value
+        const newDiv = document.createElement('div')
+        newDiv.textContent = newText
+        newDiv.id = "text"
+        // textArea.replaceWith(newDiv) 
+        textArea.remove()
+        el('card-body').prepend(newDiv)
+    }
+})
 
-const card2 = document.createElement("div")
-    card2.classList.add("card")
-    container.append(card2)
+/*Task2. Створити HTML-сторінку з великою таблицею. При кліку на заголовок стовпця, необхідно відсортувати дані цього стовпця. Врахуй, що числові значення повинні сортуватися як числа, а не як рядки.*/
 
-    const cardTitle2 = document.createElement("div")
-    cardTitle2.classList.add("card-header")
-    cardTitle2.setAttribute("id", "card-title2")
-    card2.prepend(cardTitle2)
+const users = [
+    {
+      firstName: "John",
+      lastName: "Smith",
+      age: 28
+    },
+    {
+      firstName: "Emily",
+      lastName: "Johnson",
+      age: 34
+    },
+    {
+      firstName: "Michael",
+      lastName: "Williams",
+      age: 45
+    },
+    {
+      firstName: "Sarah",
+      lastName: "Brown",
+      age: 22
+    },
+    {
+      firstName: "David",
+      lastName: "Jones",
+      age: 31
+    },
+    {
+      firstName: "Jennifer",
+      lastName: "Miller",
+      age: 29
+    },
+    {
+      firstName: "Christopher",
+      lastName: "Davis",
+      age: 38
+    },
+    {
+      firstName: "Amanda",
+      lastName: "Wilson",
+      age: 26
+    },
+    {
+      firstName: "Robert",
+      lastName: "Taylor",
+      age: 41
+    },
+    {
+      firstName: "Jessica",
+      lastName: "Anderson",
+      age: 33
+    }
+]; 
 
-    const secondH4 = document.createElement("h4")
-    secondH4.textContent = `Task 2. Створити HTML-сторінку з кнопкою "Відкрити" і модальним вікном. На      модальном вікні повинен бути текст і кнопка "Закрити". Спочатку модальне вікно не відображається. При кліку на кнопку "Відкрити" з'являється модальне вікно, на кнопку "Закрити" — зникає.`    
-    cardTitle2.prepend(secondH4)
+const tBody = el("t-body")
 
-    const cardBody2 = document.createElement("div")
-    cardBody2.classList.add("card-body")
-    cardBody2.setAttribute("id", "card-body2")
-    card2.append(cardBody2)
+function showTable(){
+  let html = ''
+  users.forEach((user, index)=>{
+      html +=`
+      <tr>
+          <th scope="row">${index+1}</th>
+          <td>${user.firstName}</td>
+          <td>${user.lastName}</td>
+          <td>${user.age}</td>
+      </tr>
+      ` 
+    })
+    tBody.innerHTML = html
+}
 
-    const btn2 = document.createElement("button")
-    btn2.classList.add("btn", "btn-primary")    
-    btn2.setAttribute("type", "button")
-    btn2.setAttribute("onclick", "showModal()")
-    btn2.textContent = "Показати модальне вікно"
-    cardBody2.prepend(btn2)   
+showTable()
 
-    const overlay = document.createElement("div")
-    overlay.classList.add("overlay")
-    document.body.prepend(overlay)
-    
-    const modal = document.createElement("div")
-    modal.classList.add("modal-window")    
-    overlay.after(modal)
 
-    const modalText = document.createElement("h4")
-    modalText.textContent = "This is modal!"
-    modal.prepend(modalText)
+const tHead = el("t-head")
 
-    const closeBtn = document.createElement("button")
-    
-    closeBtn.classList.add("btn", "btn-success", "btn-lg")
-    closeBtn.textContent = "Закрити"
-    closeBtn.setAttribute("type", "button")
-    closeBtn.setAttribute("onclick", "closeModal()")
-    modal.append(closeBtn)
+tHead.addEventListener('click', (e)=>{
+  e.preventDefault()
+  //перемикаємо значення asc desc
+  const clickedCol = e.target.closest('th[data-sort]') 
+  if(!clickedCol){return}
+  toggleDirection = clickedCol.dataset.sort === "asc" ? "desc" : "asc"
+  clickedCol.setAttribute('data-sort', toggleDirection)
 
-    
-    function showModal(){
-        overlay.classList.add("active")
-        modal.classList.add("active")
+  //видалення та додавання стрілки сортування до потрібної колонки:
+  const icon = `<i class="fa-solid fa-arrow-down asc"></i>`
+  document.querySelectorAll("#t-head i").forEach((icon)=>{
+    icon.remove()
+  })
+
+  clickedCol.insertAdjacentHTML('beforeend', icon)
+
+ //поворот стрілки вказівника сортування
+  if(toggleDirection === "desc"){
+    clickedCol.querySelector("i").classList.add("rotated")
+  } else {
+    clickedCol.querySelector("i").classList.remove("rotated")  }  
+
+ // записуємо ключ для сортування 
+  let key = ""
+  switch (true){
+    case clickedCol.id === "t-first":
+      key = "firstName";
+      break;
+    case clickedCol.id === "t-last":
+      key = "lastName";
+      break;
+    case clickedCol.id === "t-age":
+      key = "age";
+      break;  
+  }
+ 
+//викликаємо сортування та оновлюємо таблицю
+  sortTable(users, key, toggleDirection)
+  showTable()
+})
+
+function sortTable(users, key, toggleDirection){
+  users.sort((a, b)=>{
+
+    if(isNaN(a[key]) && isNaN(b[key])){
+      return toggleDirection === "asc"
+        ? a[key].localeCompare(b[key])
+        : b[key].localeCompare(a[key])
     }
 
-    function closeModal(){
-        overlay.classList.remove("active") 
-        modal.classList.remove("active")
-        
-    }
-    
-    // Мoжна замінити на функцію яка буде тоглити класи для модального вікна:
-    // function Modal(){
-    //     overlay.classList.toggle("active")
-    //     modal.classList.toggle("active")
-    // }    
-    
-    //Task3. Створити HTML-сторінку зі світлофором і кнопкою, яка перемикає світлофор на наступний колір.
+    return toggleDirection === "asc" ? a[key] - b[key] : b[key] - a[key]
 
-const card3 = document.createElement("div")
-    card3.classList.add("card")
-    container.append(card3)
+  })
+}
 
-    const cardTitle3 = document.createElement("div")
-    cardTitle3.classList.add("card-header")
-    cardTitle3.setAttribute("id", "card-title3")
-    card3.prepend(cardTitle3)
 
-    const thirdH4 = document.createElement("h4")
-    thirdH4.textContent = "Task3. Створити HTML-сторінку зі світлофором і кнопкою, яка перемикає світлофор на наступний колір."
-    cardTitle3.prepend(thirdH4)
 
-    const cardBody3 = document.createElement("div")
-    cardBody3.classList.add("card-body")
-    cardBody3.setAttribute("id", "card-body3")
-    card3.append(cardBody3)
 
-    const btn3 = document.createElement("button")
-    btn3.classList.add("btn", "btn-primary")    
-    btn3.setAttribute("type", "button")
-    btn3.setAttribute("onclick", "swichLight()")
-    btn3.textContent = "Переключити колір на наступний"
-    cardBody3.append(btn3)
-
-    const trfcLight = document.createElement("div")
-    trfcLight.classList.add("traffic-light")
-    trfcLight.setAttribute("style", "width: 120px; height: 100%; background-color:rgb(51, 51, 51); border: 5px solid #000; border-radius: 60px; margin-bottom: 60px; text-align: center; ")
-    cardBody3.prepend(trfcLight)
-
-    const redLight = document.createElement("div")
-    redLight.classList.add("light")
-    redLight.setAttribute("style", "width: 80px; height: 80px; margin:0 auto; background-color:rgb(224, 36, 29); border: 2px solid #000; border-radius: 50%; margin-bottom: 10px; margin-top: 20px; opacity: 1; box-shadow: 0 0 25px red;")
-    trfcLight.prepend(redLight)
-
-    const yellowLight = document.createElement("div")
-    yellowLight.classList.add("light")
-    yellowLight.setAttribute("style", "width: 80px; height: 80px; margin:0 auto; background-color:rgb(237, 244, 16); border: 2px solid #000; border-radius: 50%; margin-bottom: 10px; margin-top: 10px; opacity: 0.5; ")
-    trfcLight.append(yellowLight)
-
-    const greenLight = document.createElement("div")
-    greenLight.classList.add("light")
-    greenLight.setAttribute("style", "width: 80px; height: 80px; margin:0 auto; background-color:rgb(6, 197, 41); border: 2px solid #000; border-radius: 50%; margin-bottom: 20px; margin-top: 10px; opacity: 0.5;")
-    trfcLight.append(greenLight)
-
-    const lightsShadow = [
-        "0 0 25px red",
-        "0 0 25px yellow",
-        "0 0 25px rgb(37, 236, 57)"
-    ]
-
-    const allLights = document.getElementsByClassName("light")    
-    
-    let activeLight = 0
-
-    function swichLight(){
-        activeLight += 1
-        if (activeLight > 2) {
-            activeLight = 0
-        }
-        
-        for (let i = 0; i < allLights.length; i++){
-            allLights[i].style.boxShadow = "none"
-            allLights[i].style.opacity = 0.5
-        }
-
-        allLights[activeLight].style.boxShadow = lightsShadow[activeLight]
-        allLights[activeLight].style.opacity = 1 
-       
-    }
-    
-    

@@ -6,11 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <link rel="stylesheet" href="assets/css/styles.min.css">
-    <title>13 - JS - HW6 - DOM</title>
+    <title>14 - JS - HW7 - Events</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Task 1. Створити HTML-сторінку для відображення/редагування тексту.</h4>
+            </div>
+            <div class="card-body" id="card-body">
+                <div id="text">
+                    Press Ctrl+E to chgange this text
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4>Task2. Створити HTML-сторінку з великою таблицею. При кліку на заголовок стовпця, необхідно
+                    відсортувати
+                    дані цього стовпця. Врахуй, що числові значення повинні сортуватися як числа, а не як рядки.</h4>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr id="t-head">
+                            <th scope="col" id="t-num"><span>№</span></th>
+                            <th scope="col" class="filter" id="t-first" data-sort="desc"><span>First Name</span></th>
+                            <th scope="col" class="filter" id="t-last" data-sort="desc"><span>Last Name</span></th>
+                            <th scope="col" class="filter" id="t-age" data-sort="desc"><span>Age</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="t-body"></tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="assets/js/main.js"></script>
 </body>
 
