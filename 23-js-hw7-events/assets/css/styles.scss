@@ -110,3 +110,34 @@ th {
 .filter:hover {
     cursor: pointer;
 }
+
+#resize {
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #717171;
+    text-align: center;
+    position: relative;
+
+    #corner {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 15px;
+        height: 25px;
+        // border: 1px solid red;
+        padding: 1px;
+
+        &:hover {
+            cursor: nwse-resize;
+            ;
+        }
+
+        .resize-arrow {
+            color: #717171;
+            rotate: -45deg;
+            font-size: 0.8rem;
+        }
+    }
+
+}

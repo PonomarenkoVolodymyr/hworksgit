@@ -100,8 +100,8 @@ function showTable(){
           <td>${user.age}</td>
       </tr>
       ` 
+      tBody.innerHTML = html
     })
-    tBody.innerHTML = html
 }
 
 showTable()
@@ -165,5 +165,29 @@ function sortTable(users, key, toggleDirection){
 }
 
 
+// Task 3. Створити HTML-сторінку з блоком тексту в рамці. Реалізувати можливість змінювати розмір блоку, якщо затиснути мишку в правому нижньому кутку і тягнути її далі.
 
+const block = el("resize"),
+      arrow = el("corner");
+
+const rect = block.getBoundingClientRect()
+
+let x = rect.right, 
+    y = rect.bottom,
+    resX = 0,
+    resY;
+    console.log("x:", x, "y:", y);
+    
+arrow.addEventListener('mousedown', (e)=>{
+  
+  resizeCoordinate(e)
+  console.log(resX, resY)
+})
+
+function resizeCoordinate(e){
+  document.addEventListener('mousemove', (e)=>{  
+    resX =  e.clientX,
+    resY = e.clientY;
+  })
+}
 

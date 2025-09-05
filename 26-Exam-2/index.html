@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/js/plugins/lightslider/css/lightslider.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Monticello">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <!-- favicon -->
+
+    <link rel="stylesheet" href="assets/styles/styles.min.css">
+    <title>Monticello - Exam-2. Ponomarenko Volodymyr</title>
+
+    <meta name="decription"
+        content="Examination work by Ponomarenko Volodymyr. Module 2: Completed Topics – JavaScript, DOM, fetching data, jQuerry, Maket: Monticello.">
+
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="14 days">
+
+    <link rel="alternate" hreflang="x-default" href="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Exam-2">
+    <meta property="og:description" content="Examination work 2 by Ponomarenko Volodymyr">
+    <meta property="og:url" content="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/">
+    <meta property="og:site_name" content="Exam-1">
+    <meta property="og:image"
+        content="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/assets/images/abstract-arcitecture.webp">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="540">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card"
+        content="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/assets/images/logo.png">
+    <meta property="twitter:domain" content="ponomarenkovolodymyr.github.io">
+    <meta property="twitter:url" content="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/">
+    <meta name="twitter:title" content="Exam-1">
+    <meta name="twitter:description" content="Examination work by Ponomarenko Volodymyr">
+    <meta name="twitter:image"
+        content="https://ponomarenkovolodymyr.github.io/hworksgit/15-Exam-1/assets/images/logo.png">
+
+
+</head>
+
+<body class="lazy" data-bg="assets/images/bg-pic.webp">
+    <div class="overlay"></div>
+    <div class="page-wrapper">
+        <header id="header">
+            <div class="container">
+                <div class="logo-wrap">
+                    <a href="#">
+                        <img src="assets/images/Logo-min.png" alt="logo" title="logo">
+
+                    </a>
+                </div>
+                <div class="nav-right">
+                    <nav>
+                        <ul class=" main-menu">
+                            <li><a href="#what-we-do">About Us</a></li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contacts">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="socials">
+                        <ul class="socials-list">
+                            <li>
+                                <a href="#">
+                                    <svg width="10px" height="18px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#fb"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="16px" height="18px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#twіt"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="17px" height="22px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#inst"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="burger-wrap">
+                        <button class="hamburger hamburger--vortex" type="button" onclick="toggleMenu()">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="mob-menu">
+                    <ul>
+                        <li><a href="#what-we-do">About Us</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contacts">Contact</a></li>
+                    </ul>
+                    <div class="mob-socials">
+                        <ul class="socials-list">
+                            <li>
+                                <a href="#">
+                                    <svg width="10px" height="18px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#fb"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="16px" height="18px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#twіt"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="17px" height="22px">
+                                        <use xlink:href="assets/images/socials-sprite.svg#inst"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+                <div class="container">
+                    <hgroup class="hero-title">
+                        <h1>SIMPLE & MODERN</h1>
+                        <p>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+                    </hgroup>
+                    <!-- <button class="btn down"></button> -->
+                    <a href="#what-we-do" class="btn down">
+                    </a>
+                </div>
+            </section>
+            <section id="what-we-do">
+                <div class="container">
+                    <h2 class="mb-147">WHAT WE DO</h2>
+                    <div class="wedo-wrap">
+                        <div class="picture">
+                            <img src="assets/images/waht-we-do/white-build.png" alt="trade center building">
+                        </div>
+                        <div class="wedo-content">
+                            <hgroup>
+                                <p class="sup-title">ONE WORLD</p>
+                                <h3>TRADE CENTER</h3>
+                            </hgroup>
+                            <p>Increasing prosperity in our lives can be accomplished by having the right frame of
+                                mind. The truth is, our thoughts are very powerful.</p>
+                            <button type="button" class="btn-more">MORE DETAILS</button>
+                            <p><i class="fa-solid fa-location-dot"></i> <span class="location">New York City, United
+                                    States - 1776 feet </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="wedo-wrap reverse">
+                        <div class="picture">
+                            <img src="assets/images/waht-we-do/brown-build.png" alt="commrecial crnter build">
+                        </div>
+                        <div class="wedo-content">
+                            <hgroup>
+                                <p class="sup-title">INTERNATIONAL</p>
+                                <h3>COMMERCE CENTRE</h3>
+                            </hgroup>
+                            <p>Successful businesses have many things in common, today we’ll look at the big ‘R’ of
+                                recognition and how a digital advertising network may help.</p>
+                            <button type="button" class="btn-more">MORE DETAILS</button>
+                            <p><i class="fa-solid fa-location-dot"></i> <span class="location">Hong Kong - 1588
+                                    feet</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="news">
+                <div class="container">
+                    <div class="news-wrap">
+                        <h2 class="white-txt">LATEST NEWS</h2>
+                        <div class="slider-wrap">
+                            <div class="btn-left-wrap">
+                                <button class="btn left"></button>
+                            </div>
+                            <ul id="slider">
+                                <li>
+                                    <div class="news-card">
+                                        <div class="news-img-wrap">
+                                            <img src="assets/images/latest-news/lauren-mancke.png" alt="ALJA BRUN news">
+                                        </div>
+                                        <div class="news-content">
+                                            <hgroup>
+                                                <h4>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
+                                                <p>Free directories: directories are perfect for customers that are
+                                                    searching for...
+                                                </p>
+                                            </hgroup>
+                                            <div class="news-author">
+                                                <div class="avatar">
+                                                    <img src="assets/images/latest-news/authors/alja-brun.png" alt="">
+                                                </div>
+                                                <div class="news-subscribe">
+                                                    <p class="author-name">ALJA BRUN</p>
+                                                    <p class="news-date">20 Jan 2020</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="news-card">
+                                        <div class="news-img-wrap">
+                                            <img src="assets/images/latest-news/matthew-hamilton.png"
+                                                alt="DOMINIC FREEMAN news">
+                                        </div>
+                                        <div class="news-content">
+                                            <hgroup>
+                                                <h4>EFFECTIVE ADVERTISING POINTERS.</h4>
+                                                <p>Having a home based business is a wonderful asset to your life...
+                                                </p>
+                                            </hgroup>
+                                            <div class="news-author">
+                                                <div class="avatar">
+                                                    <img src="assets/images/latest-news/authors/dominic-ferman.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="news-subscribe">
+                                                    <p class="author-name">DOMINIC FREEMAN</p>
+                                                    <p class="news-date">13 Dec 2019</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="news-card">
+                                        <div class="news-img-wrap">
+                                            <img src="assets/images/latest-news/joel-filipe.png" alt="ALICE WARD news">
+                                        </div>
+                                        <div class="news-content">
+                                            <hgroup>
+                                                <h4>HYPNOTIZE YOURSELF INTO THE GHOST.</h4>
+                                                <p>There are many things that are important to catalog design...
+                                                </p>
+                                            </hgroup>
+                                            <div class="news-author">
+                                                <div class="avatar">
+                                                    <img src="assets/images/latest-news/authors/alice-ward.png" alt="">
+                                                </div>
+                                                <div class="news-subscribe">
+                                                    <p class="author-name">ALICE WARD</p>
+                                                    <p class="news-date">30 Nov 2019</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="news-card">
+                                        <div class="news-img-wrap">
+                                            <img src="assets/images/latest-news/build-1.jpg" alt="joel-filipe news">
+                                        </div>
+                                        <div class="news-content">
+                                            <hgroup>
+                                                <h4>Redefining the Future of Corporate Workspaces and Collaboration</h4>
+                                                <p>This iconic building features open-plan floors, panoramic city views,
+                                                    and integrated smart technology for seamless efficiency.
+                                                </p>
+                                            </hgroup>
+                                            <div class="news-author">
+                                                <div class="avatar">
+                                                    <img src="assets/images/latest-news/authors/ava1.png" alt="">
+                                                </div>
+                                                <div class="news-subscribe">
+                                                    <p class="author-name">Eric Lamela</p>
+                                                    <p class="news-date">07 Oct 2024</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="news-card">
+                                        <div class="news-img-wrap">
+                                            <img src="assets/images/latest-news/build2.jpg" alt="David Brown news">
+                                        </div>
+                                        <div class="news-content">
+                                            <hgroup>
+                                                <h4>A glass mall with green atrium..</h4>
+                                                <p>Innovative Sustainable Workspace Design for the Modern Enterprise
+                                                </p>
+                                            </hgroup>
+                                            <div class="news-author">
+                                                <div class="avatar">
+                                                    <img src="assets/images/latest-news/authors/ava2.png" alt="">
+                                                </div>
+                                                <div class="news-subscribe">
+                                                    <p class="author-name">David Brown</p>
+                                                    <p class="news-date">12 Mar 2025</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn-right-wrap">
+                                <button class="btn right"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="gallery">
+                <div class="container">
+                    <div class="gallery-wrap">
+                        <h2>GALLERY</h2>
+                        <div class="grid-container">
+                            <div class="grid-item col-2 row-2 ">
+                                <img src="assets/images/gallery/scott-webb.png" alt="scott-webb">
+                                <div class="gallery-icon">
+                                    <img src="assets/images/group-icon.svg" alt="magnifier">
+                                    <div class="gallery-icon">
+                                        <img src="assets/images/group-icon.svg" alt="magnifier">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item ">
+                                <img src="assets/images/gallery/skyscraper.png" alt="skyscraper">
+                                <div class="gallery-icon">
+                                    <img src="assets/images/group-icon.svg" alt="magnifier">
+                                </div>
+                            </div>
+                            <div class="grid-item ">
+                                <img src="assets/images/gallery/echo-grid-.png" alt="echo-grid">
+                                <div class="gallery-icon">
+                                    <img src="assets/images/group-icon.svg" alt="magnifier">
+                                </div>
+                            </div>
+                            <div class="grid-item ">
+                                <img src="assets/images/gallery/fuse-brussels.png" alt="fuse-brussels">
+                                <div class="gallery-icon">
+                                    <img src="assets/images/group-icon.svg" alt="magnifier">
+                                </div>
+                            </div>
+                            <div class="grid-item ">
+                                <img src="assets/images/gallery/mall.png" alt="mall">
+                                <div class="gallery-icon">
+                                    <img src="assets/images/group-icon.svg" alt="magnifier">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-more">SEE MORE</button>
+                    </div>
+                </div>
+            </section>
+            <section id="contacts">
+                <div id="map">
+                    <a href="#" id="load-map-link">
+                        <img src="assets/images/map/map-img.jpg" alt="map">
+                        <p>Click to unblock map</p>
+                    </a>
+                </div>
+                <div class="container">
+                    <div class="contact-wrap">
+                        <h2>GET IN TOUCH</h2>
+                        <div class="contact-info">
+                            <div class="contacts">
+                                <div>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>91 Nolan Extensions Suite 670</p>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a href="tel:0013568682454">+001 356-868-2454</a>
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-inbox"></i>
+                                    <a href="mailto:montichello@service.com">montichello@service.com</a>
+                                </div>
+                                <div>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <p>From 07:05AM to 19:30PM</p>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <form method="post" id="customer-info" name="customer_info">
+                                    <div class="field">
+                                        <input type="text" name="name" id="name" placeholder="" required>
+                                        <label for="name">Your name</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="email" name="email" id="email" placeholder="" required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <button type="submit" class="btn-more sbmt"><span>SUBMIT</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="wow animate__backInUp">
+            <div class="container">
+                <div class="footer-wrap">
+                    <div class="footer-row">
+                        <div class="logo-wrap">
+                            <a href="#">
+                                <img src="assets/images/Logo-min.png" alt="logo" title="logo">
+                            </a>
+                        </div>
+                        <div class="footer-socials">
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="#">
+                                        <svg width="10px" height="18px">
+                                            <use xlink:href="assets/images/socials-sprite.svg#fb"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="16px" height="18px">
+                                            <use xlink:href="assets/images/socials-sprite.svg#twіt"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="17px" height="22px">
+                                            <use xlink:href="assets/images/socials-sprite.svg#inst"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rihghts">Copyrights © 2020 Montichello</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/plugins/jquery-3.7.1.min.js" defer></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/helper.js"></script>
+    <script src="assets/js/lazyload.min.js"></script>
+    <script>const lazyLoadInstance = new LazyLoad();</script>
+    <script src="assets/js/plugins/lightslider/js/lightslider.min.js" defer></script>
+    <script src="assets/js/map.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

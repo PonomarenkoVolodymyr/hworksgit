@@ -1,5 +1,5 @@
 const API_KEY = "a2ef5fc" // OMDB key
-
+ //cheking favoriteList from localStorage
 const el = (id) => {
     return document.getElementById(id)
 }
@@ -34,7 +34,7 @@ async function searchMovie(search, type="", year=""){
 function showMovieList(movies){
     let list = ''
 
-    movies.forEach((movie)=>{
+    movies.forEach((movie, index)=>{
         list += `
         <div class="card" >
             <img class="card-img-top" src="${movie.Poster}" alt="${movie.Title} poster" onerror="this.src='./assets/img/no-img.png'">
@@ -42,6 +42,7 @@ function showMovieList(movies){
                 <h5 class="card-title">${movie.Title}</h5>
                 <p class="card-text">${movie.Year}</p>
                 <button type="button" class="btn btn-primary btn-details" data-id="${movie.imdbID}">Details</button>
+                <button type="button" id="favorite-btn" class="btn btn-secondary favorite-btn" data-id="${movie.imdbID}" data-index="${index}" title="Add to favorite"><i class="fa-solid fa-heart favorite-icon"></i></button>
             </div>
         </div>
         `
@@ -58,6 +59,19 @@ function showMovieList(movies){
                 detailInfo(imdbID)
             })
         })   
+
+        // Favorite:
+        const favoriteBtn = document.querySelectorAll(".favorite-btn")
+        
+        favoriteBtn.forEach((btn)=>{
+            btn.addEventListener('click', (e)=>{
+                e.preventDefault()
+                const imdbID = btn.dataset.id                
+                addRemoveFav(imdbID)           
+            })
+        })   
+
+
 }
 
 el("year").setAttribute("max", new Date().getFullYear())
@@ -130,3 +144,30 @@ async function detailInfo(id){
     el("overlay").classList.add("active")
     el("modal-window").classList.add("active")    
 }
+
+function addRemoveFav(id){
+    let  favoriteList = JSON.parse(localStorage.getItem('favoriteList'))
+    if(favoriteList === null) {
+        favoriteList = []
+    }
+
+    const index = favoriteList.findIndex((el) => el.imdbID === id)
+    if (index === -1) {
+        favoriteList.push({         
+           id
+        })      
+      el("favorite-btn").classList.remove('btn-secondary')
+      el("favorite-btn").classList.add('btn-warning')
+      toast.success('Film added to Favorites')
+    } else {
+        favoriteList.splice(index, 1)
+        el("favorite-btn").classList.remove('btn-warning')
+        el("favorite-btn").classList.add('btn-secondary')
+        toast.error('Film removed from Favorites')
+
+    }
+
+    localStorage.setItem('favoriteList', JSON.stringify(favoriteList))
+}
+
+
