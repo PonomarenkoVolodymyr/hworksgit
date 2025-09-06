@@ -75,7 +75,36 @@ sections.forEach(section => observer.observe(section));
 
 //jQuerry
 
+
+
+
+
 $(document).ready(function() {
+  const heroHeight = $('#hero').height();
+
+  $('#hero-slider').lightSlider({
+    item: 1,
+    slideMargin: 0,
+    vertical: true,
+    mode: 'vertical',
+    verticalHeight: heroHeight,
+    pager: true,
+    controls: false,
+    loop: true,
+    enableTouch: false, 
+    enableDrag: false
+  });
+
+
+  $(window).on('resize', function () {
+    const newHeight = $('#hero').height();
+    $('#hero-slider').data('lightSlider').refresh({
+      verticalHeight: newHeight
+    });
+  });
+
+  
+//News
     const slider = $("#slider").lightSlider({
         controls: false,
         slideMargin: 20,        
@@ -113,7 +142,7 @@ $(document).ready(function() {
 //Toast 
 const sucsess = Toastify({
   text: "Message successfully  sent",
-  duration: 2500,  
+  duration: 3500,  
   newWindow: true,
   gravity: "top",
   position: 'left',
@@ -124,7 +153,7 @@ const sucsess = Toastify({
 })
 const error = Toastify({
   text: "Unfortuently message not sended",
-  duration: 2500,  
+  duration: 3500,  
   newWindow: true,
   gravity: "top",
   position: 'left',
