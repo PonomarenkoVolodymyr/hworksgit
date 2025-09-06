@@ -74,11 +74,6 @@ sections.forEach(section => observer.observe(section));
 
 
 //jQuerry
-
-
-
-
-
 $(document).ready(function() {
   const heroHeight = $('#hero').height();
 
@@ -139,6 +134,18 @@ $(document).ready(function() {
 });
 //jQuerry
 
+
+//LigntGallery
+document.addEventListener('DOMContentLoaded', function () {
+  lightGallery(document.querySelector('.grid-container'), {
+    plugins: [lgZoom, lgThumbnail],
+    selector: 'a',
+    thumbnail: true,
+    zoom: true,
+    download: false
+  });
+});
+
 //Toast 
 const sucsess = Toastify({
   text: "Message successfully  sent",
@@ -191,5 +198,8 @@ form.onsubmit = async function(e){
   }
   formInProgress = false
 }
+
+
+
 
 
