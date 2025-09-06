@@ -3,6 +3,11 @@ const el = (id)=>{
 return document.getElementById(id)
 }
 
+const lazyLoadInstance = new LazyLoad({
+  elements_selector: ".lazy",
+  data_bg: true               
+});
+
 wow = new WOW(
   {
       animateClass: 'animate__animated',
@@ -110,7 +115,7 @@ $(document).ready(function() {
         speed: 600,
         responsive: [
             {
-                breakpoint: 1000,
+                breakpoint: 1024,
                 settings: {
                     item: 2,
                     slideMove: 1,
@@ -129,7 +134,33 @@ $(document).ready(function() {
     });
 
     $(".btn.left").click (()=>{slider.goToPrevSlide()});
-    $(".btn.right").click (()=>{slider.goToNextSlide()});    
+    $(".btn.right").click (()=>{slider.goToNextSlide()});  
+    
+    //test
+    const slider2 = $('#test-slider').lightSlider({
+      item: 3, // строго 3 слайда
+      slideMargin: 0, // убираем лишние отступы между слайдами
+      loop: true,
+      controls: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            item: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            item: 1
+          }
+        }
+      ]
+    });
+    
+
+  $(".btn.left").click (()=>{slider2.goToPrevSlide()});
+  $(".btn.right").click (()=>{slider2.goToNextSlide()});
     
 });
 //jQuerry

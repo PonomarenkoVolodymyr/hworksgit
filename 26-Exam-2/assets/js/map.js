@@ -37,7 +37,7 @@ function initMap(){
     L.marker([51.51474, -0.08034], {icon: customIcon}).addTo(map)
         .bindPopup(`<div id="map-info">
                 <div class="news-img-wrap">
-                    <img src="assets/images/map/mainoffice.png" alt="main office">
+                    <img src="assets/images/map/mainoffice.webp" alt="main office">
                 </div>
                 <h4>Main office.</h4>
                 <p>30 St Mary Axe, London EC3A 8BF, Great Britain</p>
