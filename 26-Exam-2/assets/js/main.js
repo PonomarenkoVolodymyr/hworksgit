@@ -178,33 +178,69 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Toast 
-const sucsess = Toastify({
-  text: "Message successfully  sent",
-  duration: 3500,  
-  newWindow: true,
-  gravity: "top",
-  position: 'left',
-  close: true,
-  style: {
-    background: "linear-gradient(to right, #00b09b, #96c93d)",
-  }
-})
-const error = Toastify({
-  text: "Unfortuently message not sended",
-  duration: 3500,  
-  newWindow: true,
-  gravity: "top",
-  position: 'left',
-  close: true,
-  style: {
-    background: "linear-gradient(to right, #ff5f6d, #ffc371)",
-  }
-})
+// const sucsess = Toastify({
+//   text: "Message successfully  sent",
+//   duration: 3500,  
+//   newWindow: true,
+//   gravity: "top",
+//   position: 'left',
+//   close: true,
+//   style: {
+//     background: "linear-gradient(to right, #00b09b, #96c93d)",
+//   }
+// })
+// const error = Toastify({
+//   text: "Unfortuently message not sended",
+//   duration: 3500,  
+//   newWindow: true,
+//   gravity: "top",
+//   position: 'left',
+//   close: true,
+//   style: {
+//     background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+//   }
+// })
+function successToast(message = "Message successfully sent") {
+  Toastify({
+      text: message,
+      duration: 3500,  
+      newWindow: true,
+      gravity: "top",
+      position: 'left',
+      close: true,
+      style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+      }
+  }).showToast();
+}
+
+function errorToast(message = "Unfortunately message not sent") {
+  Toastify({
+      text: message,
+      duration: 3500,  
+      newWindow: true,
+      gravity: "top",
+      position: 'left',
+      close: true,
+      style: {
+          background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+      }
+  }).showToast();
+}
+
+
+
 
 
 //TG sending
 let formInProgress = false
 const form = document.getElementById('customer-info')
+
+function isValidEmail(email) {
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return validEmail.test(email);
+}
+
 form.onsubmit = async function(e){
   e.preventDefault()
   if(formInProgress){return}
@@ -215,6 +251,18 @@ form.onsubmit = async function(e){
 
   const userName = document.getElementById('name').value
   const userEmail = document.getElementById('email').value
+  
+  if (userName.length < 3){
+    errorToast('Name is to short, need more than 3 letters')
+    formInProgress = false
+    return
+  }
+
+  if (!isValidEmail(userEmail)) {
+    errorToast('Please enter a valid email address')
+    formInProgress = false
+    return
+  }
 
  const message = `<b>User name:</b> ${userName}%0a` +
                   `<b>Email:</b> ${userEmail}`
@@ -222,13 +270,16 @@ form.onsubmit = async function(e){
   const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}&parse_mode=html`)
   const answer = await resp.json()
   if(answer.ok){
-    sucsess.showToast()
+    successToast()
     form.reset()
   }else{
-    error.showToast()
+    errorToast()
   }
   formInProgress = false
 }
+
+
+
 
 
 
