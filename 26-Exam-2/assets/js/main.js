@@ -25,18 +25,14 @@ const toggleMenu = () => {
   }
 }
 
-
 window.addEventListener('resize', function () {
   if (window.innerWidth >= 992 && document.body.classList.contains('open-menu')) {
       document.body.classList.remove('open-menu')
   }
 })
 
-
-
 //Додаємо клас до хедеру при скролі
 let isScrolled = false;
-
 
 window.addEventListener("scroll", () => {
   if (!isScrolled && window.scrollY > 250) {
@@ -76,8 +72,6 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
-
-
 //jQuerry
 $(document).ready(function() {
   //hero
@@ -106,7 +100,6 @@ $(document).ready(function() {
       },   
   ]
   });
-
 
   $(window).on('resize', function () {
     const newHeight = heroHeight;
@@ -152,19 +145,11 @@ $(document).ready(function() {
                 }
           }
       ]
-  });  
- 
-
-
+  });   
     $(".btn.left").click (()=>{slider.goToPrevSlide()});
-    $(".btn.right").click (()=>{slider.goToNextSlide()}); 
- 
-    
+    $(".btn.right").click (()=>{slider.goToNextSlide()});     
 });
 //jQuerry end
-
-
-
 
 //LigntGallery
 document.addEventListener('DOMContentLoaded', function () {
@@ -177,30 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//Toast 
-// const sucsess = Toastify({
-//   text: "Message successfully  sent",
-//   duration: 3500,  
-//   newWindow: true,
-//   gravity: "top",
-//   position: 'left',
-//   close: true,
-//   style: {
-//     background: "linear-gradient(to right, #00b09b, #96c93d)",
-//   }
-// })
-// const error = Toastify({
-//   text: "Unfortuently message not sended",
-//   duration: 3500,  
-//   newWindow: true,
-//   gravity: "top",
-//   position: 'left',
-//   close: true,
-//   style: {
-//     background: "linear-gradient(to right, #ff5f6d, #ffc371)",
-//   }
-// })
-function successToast(message = "Message successfully sent") {
+function showSuccessToast(message = "Message successfully sent") {
   Toastify({
       text: message,
       duration: 3500,  
@@ -227,10 +189,6 @@ function errorToast(message = "Unfortunately message not sent") {
       }
   }).showToast();
 }
-
-
-
-
 
 //TG sending
 let formInProgress = false
@@ -277,11 +235,3 @@ form.onsubmit = async function(e){
   }
   formInProgress = false
 }
-
-
-
-
-
-
-
-

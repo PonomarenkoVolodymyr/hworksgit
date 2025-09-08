@@ -1066,8 +1066,6 @@ h2 {
 }
 
 
-
-
 #map-info {
     width: 130px;
     height: 200px;
@@ -1473,6 +1471,11 @@ input:-webkit-autofill {
 
         a#load-map-link p {
             font-size: 1.5rem;
+        }
+
+        a#load-map-link p,
+        a#load-map-link::after {
+            opacity: 1;
         }
     }
 
