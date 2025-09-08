@@ -44,3 +44,11 @@
        url('../fonts/SourceSansPro-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Icons';
+  src: url('../fonts/monticello-icons.woff2') format('woff2'),
+       url('../fonts/monticello-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -80,9 +80,10 @@ sections.forEach(section => observer.observe(section));
 
 //jQuerry
 $(document).ready(function() {
+  //hero
   const heroHeight = $('#hero').height();
 
-  $('#hero-slider').lightSlider({
+  const heroSlider = $('#hero-slider').lightSlider({
     item: 1,
     slideMargin: 0,
     vertical: true,
@@ -92,78 +93,77 @@ $(document).ready(function() {
     controls: false,
     loop: true,
     enableTouch: false, 
-    enableDrag: false
+    enableDrag: false,
+    auto:true,
+    pause: 6000,
+    speed: 2500,
+    responsive : [
+      {
+          breakpoint:992,
+          settings: {
+            pager: false,
+            }
+      },   
+  ]
   });
 
 
   $(window).on('resize', function () {
-    const newHeight = $('#hero').height();
-    $('#hero-slider').data('lightSlider').refresh({
+    const newHeight = heroHeight;
+    heroSlider.data('lightSlider').refresh({
       verticalHeight: newHeight
     });
   });
 
+  $(".btn.up.slide").click (()=>{heroSlider.goToPrevSlide()});
+  $(".btn.down.slide").click (()=>{heroSlider.goToNextSlide()});   
+
   
 //News
-    const slider = $("#slider").lightSlider({
-        controls: false,
-        slideMargin: 20,        
-        item: 3,
-        loop: true,
-        slideMove: 1,
-        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    item: 2,
-                    slideMove: 1,
-                    slideMargin: 5, 
+    const slider = $('#slider').lightSlider({      
+      item:3,
+      controls:false,
+      loop:true,
+      slideMove:1,
+      auto: true,
+      pause: 7000,
+      speed: 1000,
+      slideMargin:20,
+      responsive : [
+          {
+              breakpoint:1024,
+              settings: {
+                pager: false,
                 }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    item: 1,
-                    slideMove: 1
-                    
+          },
+          {
+              breakpoint:1000,
+              settings: {
+                  item:2,
+                  slideMove:1,
+                  slideMargin:10,
                 }
-            }
-        ]
-    });
+          },
+          {
+              breakpoint:600,
+              settings: {
+                  item:1,
+                  slideMove:1
+                }
+          }
+      ]
+  });  
+ 
+
 
     $(".btn.left").click (()=>{slider.goToPrevSlide()});
-    $(".btn.right").click (()=>{slider.goToNextSlide()});  
-    
-    //test
-    const slider2 = $('#test-slider').lightSlider({
-      item: 3, // строго 3 слайда
-      slideMargin: 0, // убираем лишние отступы между слайдами
-      loop: true,
-      controls: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            item: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            item: 1
-          }
-        }
-      ]
-    });
-    
-
-  $(".btn.left").click (()=>{slider2.goToPrevSlide()});
-  $(".btn.right").click (()=>{slider2.goToNextSlide()});
+    $(".btn.right").click (()=>{slider.goToNextSlide()}); 
+ 
     
 });
-//jQuerry
+//jQuerry end
+
+
 
 
 //LigntGallery
