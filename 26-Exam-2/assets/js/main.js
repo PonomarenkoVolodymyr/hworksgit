@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function showSuccessToast(message = "Message successfully sent") {
+function sucsessToast(message = "Message successfully sent") {
   Toastify({
       text: message,
       duration: 3500,  
@@ -228,7 +228,7 @@ form.onsubmit = async function(e){
   const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}&parse_mode=html`)
   const answer = await resp.json()
   if(answer.ok){
-    successToast()
+    sucsessToast()
     form.reset()
   }else{
     errorToast()
