@@ -170,24 +170,31 @@ function sortTable(users, key, toggleDirection){
 const block = el("resize"),
       arrow = el("corner");
 
-const rect = block.getBoundingClientRect()
+let isResizing = false;
 
-let x = rect.right, 
-    y = rect.bottom,
-    resX = 0,
-    resY;
-    console.log("x:", x, "y:", y);
-    
-arrow.addEventListener('mousedown', (e)=>{
-  
-  resizeCoordinate(e)
-  console.log(resX, resY)
-})
+arrow.addEventListener('mousedown', (e) => {
+  e.preventDefault();
+  isResizing = true;
 
-function resizeCoordinate(e){
-  document.addEventListener('mousemove', (e)=>{  
-    resX =  e.clientX,
-    resY = e.clientY;
-  })
+  document.addEventListener('mousemove', resize);
+  document.addEventListener('mouseup', stopResize);
+});
+
+function resize(e) {
+  if (!isResizing) return;
+
+  let newWidth = e.clientX - block.getBoundingClientRect().left;
+  let newHeight = e.clientY - block.getBoundingClientRect().top;
+ 
+  if (newWidth > 250) block.style.width = newWidth + "px";
+  if (newHeight > 70) block.style.height = newHeight + "px";
+  if (newWidth > 940) block.style.width = "940px";
+  if (newHeight > 420) block.style.height = "420px";
+}
+
+function stopResize() {
+  isResizing = false;
+  document.removeEventListener('mousemove', resize);
+  document.removeEventListener('mouseup', stopResize);
 }
 

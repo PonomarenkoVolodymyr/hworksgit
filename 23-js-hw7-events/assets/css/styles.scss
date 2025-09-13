@@ -111,9 +111,13 @@ th {
     cursor: pointer;
 }
 
+.card-body.resizeble {
+    height: 450px;
+}
+
 #resize {
     width: 250px;
-    height: 100px;
+    height: 70px;
     padding: 10px;
     border: 1px solid #717171;
     text-align: center;
