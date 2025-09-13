@@ -1,5 +1,49 @@
 const API_KEY = "a2ef5fc" // OMDB key
- //cheking favoriteList from localStorage
+
+//toasts 
+function successToast(message = "Movie added to favorites") {
+    Toastify({
+        text: message,
+        duration: 3500,  
+        newWindow: true,
+        gravity: "top",
+        position: 'left',
+        close: true,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+    }).showToast();
+  }
+  
+  function errorToast(message = "Movie deleted from favorites") {
+    Toastify({
+        text: message,
+        duration: 3500,  
+        newWindow: true,
+        gravity: "top",
+        position: 'left',
+        close: true,
+        style: {
+            background: "linear-gradient(to right, #ff5f6d, #ffc371)",
+        }
+    }).showToast();
+  }
+  
+  function infoToast(message = "Please enter the movie title") {
+    Toastify({
+        text: message,
+        duration: 3500,  
+        newWindow: true,
+        gravity: "top",
+        position: 'left',
+        close: true,
+        style: {
+            background: "linear-gradient(to right,rgb(44, 60, 240),rgb(53, 174, 249))",
+        }
+    }).showToast();
+  }
+//toasts end
+
 const el = (id) => {
     return document.getElementById(id)
 }
@@ -13,7 +57,7 @@ form.addEventListener("submit", function(e){
     const year = el("year").value
 
     if(search === ""){
-        return toast.info('Enter movie name for searching')
+        return infoToast('Enter movie name for searching')
     }
 
     searchMovie(search, type, year)
@@ -24,7 +68,7 @@ async function searchMovie(search, type="", year=""){
     const data = await response.json()
 
     if(data.Response === "False"){
-        toast.error(data.Error)
+        errorToast(data.Error)
         return
     }   
     
@@ -32,9 +76,14 @@ async function searchMovie(search, type="", year=""){
 }
 
 function showMovieList(movies){
+    const favoriteList = JSON.parse(localStorage.getItem('favoriteList')) || []
     let list = ''
 
-    movies.forEach((movie, index)=>{
+    movies.forEach((movie, index)=>{       
+        const isFavorite = favoriteList.some(fav => fav.id === movie.imdbID)
+        const btnClass = isFavorite ? 'btn-warning' : 'btn-secondary'
+        const btnTitle = isFavorite ? 'Remove from favorite' : 'Add to favorite'
+        
         list += `
         <div class="card" >
             <img class="card-img-top" src="${movie.Poster}" alt="${movie.Title} poster" onerror="this.src='./assets/img/no-img.png'">
@@ -42,36 +91,39 @@ function showMovieList(movies){
                 <h5 class="card-title">${movie.Title}</h5>
                 <p class="card-text">${movie.Year}</p>
                 <button type="button" class="btn btn-primary btn-details" data-id="${movie.imdbID}">Details</button>
-                <button type="button" id="favorite-btn" class="btn btn-secondary favorite-btn" data-id="${movie.imdbID}" data-index="${index}" title="Add to favorite"><i class="fa-solid fa-heart favorite-icon"></i></button>
+                <button type="button" class="btn ${btnClass} favorite-btn" data-id="${movie.imdbID}" data-title="${movie.Title}" data-year="${movie.Year}" data-poster="${movie.Poster}" title="${btnTitle}">
+                <i class="fa-solid fa-heart favorite-icon"></i>
+                </button>
             </div>
         </div>
         `
+    })
+
+    el("movies-list").innerHTML = list
+
+    const btnsList = document.querySelectorAll(".btn-details")       
+    btnsList.forEach((btn)=>{
+        btn.addEventListener('click', (e)=>{
+            e.preventDefault()
+            const imdbID = btn.dataset.id
+            detailInfo(imdbID)
         })
+    })   
 
-        el("movies-list").innerHTML = list
-
-        const btnsList = document.querySelectorAll(".btn-details")       
-        
-        btnsList.forEach((btn)=>{
-            btn.addEventListener('click', (e)=>{
-                e.preventDefault()
-                const imdbID = btn.dataset.id
-                detailInfo(imdbID)
-            })
-        })   
-
-        // Favorite:
-        const favoriteBtn = document.querySelectorAll(".favorite-btn")
-        
-        favoriteBtn.forEach((btn)=>{
-            btn.addEventListener('click', (e)=>{
-                e.preventDefault()
-                const imdbID = btn.dataset.id                
-                addRemoveFav(imdbID)           
-            })
-        })   
-
-
+    
+    const favoriteBtn = document.querySelectorAll(".favorite-btn")
+    favoriteBtn.forEach((btn)=>{
+        btn.addEventListener('click', (e)=>{
+            e.preventDefault()
+            const favMovie = {
+                id: btn.dataset.id,
+                title: btn.dataset.title,
+                year: btn.dataset.year,
+                poster: btn.dataset.poster
+            }
+            addRemoveFav(favMovie, btn)          
+        })
+    })   
 }
 
 el("year").setAttribute("max", new Date().getFullYear())
@@ -87,7 +139,7 @@ async function detailInfo(id){
     const details = await response.json()
     
     if(details.Response === "False"){
-        toast.error(details.Error)
+        errorToast(details.Error)
         return
     }
 
@@ -145,29 +197,109 @@ async function detailInfo(id){
     el("modal-window").classList.add("active")    
 }
 
-function addRemoveFav(id){
-    let  favoriteList = JSON.parse(localStorage.getItem('favoriteList'))
-    if(favoriteList === null) {
-        favoriteList = []
-    }
-
-    const index = favoriteList.findIndex((el) => el.imdbID === id)
-    if (index === -1) {
-        favoriteList.push({         
-           id
-        })      
-      el("favorite-btn").classList.remove('btn-secondary')
-      el("favorite-btn").classList.add('btn-warning')
-      toast.success('Film added to Favorites')
-    } else {
+function addRemoveFav(favMovie, btnElement){
+    let favoriteList = JSON.parse(localStorage.getItem('favoriteList')) || []
+    const index = favoriteList.findIndex((el) => el.id === favMovie.id)
+    
+    if (index === -1) {      
+        favoriteList.push(favMovie)
+        btnElement.classList.remove('btn-secondary')
+        btnElement.classList.add('btn-warning')
+        btnElement.title = 'Remove from favorite'
+        successToast(`"${favMovie.title}" added to Favorites`)
+    } else {       
         favoriteList.splice(index, 1)
-        el("favorite-btn").classList.remove('btn-warning')
-        el("favorite-btn").classList.add('btn-secondary')
-        toast.error('Film removed from Favorites')
-
+        btnElement.classList.remove('btn-warning')
+        btnElement.classList.add('btn-secondary')
+        btnElement.title = 'Add to favorite'
+        errorToast(`"${favMovie.title}" removed from Favorites`)
     }
 
     localStorage.setItem('favoriteList', JSON.stringify(favoriteList))
 }
 
 
+
+const favoriteMainBtn = document.getElementById('favorite')
+if (favoriteMainBtn) {
+    favoriteMainBtn.addEventListener('click', function(e){
+        e.preventDefault()
+        showFavoritesModal()
+    })
+}
+
+function showFavoritesModal(){
+    const favoriteList = JSON.parse(localStorage.getItem('favoriteList')) || []
+    
+    if(favoriteList.length === 0){
+        infoToast('No favorites yet!')
+        let modalContent = `
+    <div class="modal-wrap">
+        <div class="favorite-wrap">
+            <div class="favorite-header">
+                <h3>Your Favorite Movies (${favoriteList.length})</h3>
+                <button type="button" onclick="modalClose()" class="btn btn-success btn-fav">Close</button>
+            </div>                  
+            <h2>No favorites yet!</h2>                    
+        </div>
+    </div>
+    `   
+    el("modal-window").innerHTML = modalContent   
+    el("modal-window").classList.add("favorite-modal")   
+    el("overlay").classList.add("active")
+    el("modal-window").classList.add("active")
+    return 
+    }
+
+    let modalContent = `
+    <div class="modal-wrap">
+    <div class="favorite-wrap">
+        <div class="favorite-header">
+            <h3>Your Favorite Movies (${favoriteList.length})</h3>
+            <button type="button" onclick="modalClose()" class="btn btn-success btn-fav">Close</button>
+        </div>
+        <div class="favorites-list">
+    `
+
+    favoriteList.forEach(movie => {
+        modalContent += `
+        <div class="favorite-item">            
+            <img src="${movie.poster}" alt="${movie.title}" onerror="this.src='./assets/img/no-img.png'">            
+            <div class="favorite-info">
+                <h5>${movie.title}</h5>
+                <p>${movie.year}</p>
+            </div>
+            <button class="btn btn-danger btn-sm remove-fav" data-id="${movie.id}">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+        ` 
+    })
+   
+
+    el("modal-window").innerHTML = modalContent   
+    el("modal-window").classList.add("favorite-modal")   
+    el("overlay").classList.add("active")
+    el("modal-window").classList.add("active")
+  
+    const removeButtons = document.querySelectorAll(".remove-fav")
+    removeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = btn.dataset.id
+            removeFromFavorites(id)
+        })
+    })
+}
+
+function removeFromFavorites(id){
+    let favoriteList = JSON.parse(localStorage.getItem('favoriteList')) || []
+    const index = favoriteList.findIndex((el) => el.id === id)
+    
+    if (index !== -1) {
+        const movieTitle = favoriteList[index].title
+        favoriteList.splice(index, 1)
+        localStorage.setItem('favoriteList', JSON.stringify(favoriteList))
+        errorToast(`"${movieTitle}" removed from Favorites`)
+        showFavoritesModal()
+    }
+}
